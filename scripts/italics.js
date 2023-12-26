@@ -26,9 +26,6 @@ const italicMap = {
         'ú': '𝘶́', 'û': '𝘶̂', 'ü': '𝘶̈', 'ý': '𝘺́', 'þ': '𝘵̵', 'ÿ': '𝘺̈'
       };
       
-    // Punctuation and special characters will not change for italics
-};
-
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('alternatingTextForm').addEventListener('submit', function (e) {
         e.preventDefault();
