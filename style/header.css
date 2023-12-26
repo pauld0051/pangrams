@@ -153,9 +153,13 @@ footer {
 
 /* You may remove the position: absolute; from the footer if it's causing issues */
 footer {
-    background-color: #333;
     color: #fff;
-    padding: 1rem; /* Adjusted to apply padding uniformly */
+    text-align: center;
+    padding: 1rem; /* Keep the top and bottom padding */
+    background-color: #333;
+    max-width: 800px; /* Match the max-width of your main content and header */
+    margin-left: auto; /* Center align the footer */
+    margin-right: auto; /* Center align the footer */
 }
 
 
