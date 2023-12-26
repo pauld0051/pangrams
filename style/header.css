@@ -149,17 +149,7 @@ footer {
     max-width: 800px; /* Match the max-width of your main content and header */
     margin-left: auto; /* Center align the footer */
     margin-right: auto; /* Center align the footer */
-}
-
-/* You may remove the position: absolute; from the footer if it's causing issues */
-footer {
-    color: #fff;
-    text-align: center;
-    padding: 1rem; /* Keep the top and bottom padding */
-    background-color: #333;
-    max-width: 800px; /* Match the max-width of your main content and header */
-    margin-left: auto; /* Center align the footer */
-    margin-right: auto; /* Center align the footer */
+    position: relative; /* Or you can remove the position property if not needed */
 }
 
 
