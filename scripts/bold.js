@@ -27,9 +27,9 @@ const boldMap = {
   ',': ',', // No bold equivalent, remains the same
   ';': ';', // No bold equivalent, remains the same
   ':': ':', // No bold equivalent, remains the same
-  '!': '❗', // Bold equivalent for exclamation
-  '?': '❓', // Bold equivalent for question mark
-  '-': '➖', // Bold equivalent for minus
+  '!': '!', // Bold equivalent for exclamation
+  '?': '?', // Bold equivalent for question mark
+  '-': '-', // Bold equivalent for minus
   '(': '(', // No bold equivalent, remains the same
   ')': ')', // No bold equivalent, remains the same
   '[': '[', // No bold equivalent, remains the same
