@@ -48,4 +48,63 @@ footer {
     width: 100%;
 }
 
-/* Add more styles as needed */
+/* Apply a general padding and possibly a background image or color to the body */
+body {
+    padding: 2rem;
+    background: #f0f2f5; /* Light grey background */
+    /* Add a background image if you like with
+    background-image: url('path-to-your-image.jpg');
+    background-size: cover;
+    */
+}
+
+/* Style the main content area */
+main {
+    max-width: 800px; /* Set a max-width for the content */
+    margin: auto; /* Center align the content */
+    padding: 2rem;
+    background: #ffffff; /* White background for content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for depth */
+    border-radius: 8px; /* Rounded corners for the content box */
+}
+
+/* Style the form input */
+input[type="text"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 8px; /* Rounded corners for the input box */
+    font-size: 1.25rem; /* Larger font size */
+}
+
+/* Style the button */
+button {
+    padding: 1rem 2rem;
+    background-color: #007bff; /* Blue background */
+    color: #ffffff; /* White text */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.25rem; /* Larger font size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
+    transition: transform 0.1s ease-in-out; /* Smooth transition for click */
+}
+
+/* Button interaction */
+button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+button:active {
+    transform: scale(0.98); /* Slightly shrink the button when clicked */
+}
+
+/* Style the result display */
+#result {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #e9ecef; /* Light grey background */
+    border-radius: 8px; /* Rounded corners */
+}
+
