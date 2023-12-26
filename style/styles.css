@@ -108,3 +108,29 @@ button:active {
     border-radius: 8px; /* Rounded corners */
 }
 
+/* Style the form */
+#alternatingTextForm {
+    margin-bottom: 1rem; /* Spacing below the form */
+}
+
+/* Style the input */
+#textInput {
+    width: 100%; /* Full width */
+    padding: 0.5rem;
+    margin-bottom: 1rem; /* Spacing below the input */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+/* Style the output textarea */
+#alternatingTextOutput {
+    width: 100%; /* Full width */
+    padding: 0.5rem;
+    height: 3em; /* Fixed height for the textarea */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Slightly rounded corners */
+    margin-bottom: 1rem; /* Spacing below the textarea */
+    background-color: #f8f8f8; /* Slightly off-white background */
+    resize: none; /* Disable resizing */
+}
+
