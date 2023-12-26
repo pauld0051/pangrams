@@ -34,6 +34,26 @@ header nav ul li a {
     font-weight: bold;
 }
 
+.header-content {
+    display: flex;
+    align-items: center; /* This will vertically center the logo with the navigation links */
+    justify-content: space-between; /* This spaces out the logo and navigation */
+    padding: 1rem; /* Adjust the padding as needed */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#logo {
+    height: 50px; /* Adjust the height as needed */
+    margin-right: 1rem; /* Space between logo and nav items */
+}
+
 h1 {
     margin-bottom: 2rem;
 }
