@@ -23,7 +23,7 @@ const boldMap = {
   'é': '𝗲', 'ê': '𝗲', 'ë': '𝗲', 'ì': '𝗶', 'í': '𝗶', 'î': '𝗶', 'ï': '𝗶', 'ð': '𝗱',
   'ñ': '𝗻', 'ò': '𝗼', 'ó': '𝗼', 'ô': '𝗼', 'õ': '𝗼', 'ö': '𝗼', 'ø': '𝗼', 'ù': '𝘂',
   'ú': '𝘂', 'û': '𝘂', 'ü': '𝘂', 'ý': '𝘆', 'þ': '𝘁', 'ÿ': '𝘆',
-  '.': '•', // Bold equivalent for dot
+  '.': '.', // No bold equivalent, remains the same
   ',': ',', // No bold equivalent, remains the same
   ';': ';', // No bold equivalent, remains the same
   ':': ':', // No bold equivalent, remains the same
