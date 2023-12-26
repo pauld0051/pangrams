@@ -15,22 +15,6 @@ body {
     height: 50px; /* Adjust the height as needed */
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    /* Show the hamburger menu on smaller screens */
-    .hamburger {
-        display: block;
-        position: absolute;
-        right: 1rem; /* Adjust as needed */
-        top: 1rem; /* Adjust as needed */
-        /* other styles */
-    }
-
-    /* Adjustments for the rest of the header content on smaller screens */
-    .header-content {
-        justify-content: flex-start; /* Aligns items to the start */
-    }
-
     header h1 {
         order: 0; /* Resets the order */
         flex-grow: 1; /* Allows the title to grow */
@@ -53,12 +37,6 @@ body {
         display: block; /* Makes the links fill the li */
         /* other styles */
     }
-
-    /* Styles for nav links when hamburger is active */
-    .hamburger.active + nav ul {
-        display: flex; /* Shows the links when active */
-    }
-}
 
 h1 {
     margin-bottom: 2rem;

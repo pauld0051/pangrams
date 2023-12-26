@@ -1,22 +1,28 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Prevent the form from submitting when the 'Transform' button is clicked
-    document.getElementById('alternatingTextForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      convertToItalics();
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('alternatingTextForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const inputText = document.getElementById('textInput').value;
+        const italicText = '<i>' + inputText + '</i>';
+
+        // Set the italic text as the value of the output textbox
+        const outputTextbox = document.getElementById('italicTextOutput');
+        outputTextbox.value = italicText;
     });
-    
-    // Function to convert text to italics and display it
-    function convertToItalics() {
-      var userInput = document.getElementById('textInput').value;
-      var italicText = '<i>' + userInput + '</i>';
-      document.getElementById('italicTextOutput').value = italicText;
+
+    // Function to copy text to clipboard
+    function copyToClipboard(text) {
+        const dummy = document.createElement('textarea');
+        document.body.appendChild(dummy);
+        dummy.value = text;
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
     }
-    
-    // Optional: Copy the italic text to the clipboard when the 'Copy Text' button is clicked
-    document.getElementById('copyButton').addEventListener('click', function() {
-      var copyText = document.getElementById('italicTextOutput');
-      copyText.select();
-      document.execCommand('copy');
+
+    // Event listener for the copy button
+    document.getElementById('copyButton').addEventListener('click', function () {
+        const textToCopy = document.getElementById('italicTextOutput').value;
+        copyToClipboard(textToCopy);
     });
-  });
-  
+});
