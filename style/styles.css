@@ -147,11 +147,6 @@ button:active {
         margin: 0.5rem 0; /* Adjust margin for smaller screens */
     }
 
-    /* Adjust footer for smaller screens */
-    footer {
-        position: relative; /* Change position to relative on smaller screens */
-    }
-
     /* Add any additional styles for smaller screens here */
     /* ... */
 }
