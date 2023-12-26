@@ -133,29 +133,29 @@ nav ul li a {
     .hamburger.active + nav ul {
         display: block; /* Show the navigation menu */
     }
-}
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 2rem; /* Add horizontal padding to match the header */
-    width: 100%;
-}
-
-/* Adjust the footer to be contained within the same max-width as main content and center it */
-@media (min-width: 768px) {
     footer {
-        max-width: 800px; /* Match the max-width of your main content */
-        margin: 0 auto; /* Center the footer in the viewport */
-        padding-left: 2rem; /* Adjust to match the main content padding */
-        padding-right: 2rem; /* Adjust to match the main content padding */
+        padding-left: 2rem; /* Match the main content side padding */
+        padding-right: 2rem; /* Match the main content side padding */
     }
 }
 
-/* Ensure the footer is not absolutely positioned */
+/* Ensure the footer has the same max-width and horizontal margins as the main content */
 footer {
-    position: relative;
-    bottom: 0;
+    color: #fff;
+    text-align: center;
+    padding: 1rem; /* Keep the top and bottom padding */
+    background-color: #333;
+    max-width: 800px; /* Match the max-width of your main content and header */
+    margin-left: auto; /* Center align the footer */
+    margin-right: auto; /* Center align the footer */
 }
+
+/* You may remove the position: absolute; from the footer if it's causing issues */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem; /* Adjusted to apply padding uniformly */
+}
+
 
