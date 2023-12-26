@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4; /* Light grey background */
 }
@@ -60,12 +60,12 @@ body {
 
 /* Style the main content area */
 main {
-    max-width: 800px; /* Set a max-width for the content */
-    margin: auto; /* Center align the content */
+    max-width: 800px;
+    margin: 2rem auto; /* Adjust the top margin to push down */
     padding: 2rem;
-    background: #ffffff; /* White background for content */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for depth */
-    border-radius: 8px; /* Rounded corners for the content box */
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 /* Style the form input */
