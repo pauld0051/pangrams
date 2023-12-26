@@ -12,42 +12,77 @@ body {
 }
 
 header {
-    background-color: #333; /* Dark background for the header */
+    background-color: #333;
     color: #fff;
 }
 
 .header-content {
     display: flex;
-    align-items: center; /* Vertically centers the items in the container */
-    justify-content: space-between; /* Distributes space between items */
-    padding: 1rem; /* Adjust the padding as needed */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
 }
 
-/* If .header-content is not wrapping your navigation, apply the styles directly to header nav */
-header nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Adjust as needed */
-    padding: 0 1rem; /* Horizontal padding */
+header h1 {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0; /* Adjust spacing as needed */
 }
 
-header nav ul {
-    list-style: none;
+nav ul {
+    list-style-type: none;
     display: flex;
-    align-items: center;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
-header nav ul li {
-    margin-right: 20px; /* Space between nav items */
+nav ul li {
+    margin: 0 10px; /* Adjust spacing as needed */
 }
 
-header nav ul li a {
+nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
 }
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+    }
+
+    header h1 {
+        order: -1; /* Brings the title to the top */
+        flex-basis: 100%; /* Gives the title full width */
+        padding: 10px 0; /* Adjust spacing as needed */
+    }
+
+    nav {
+        order: 2; /* Pushes the nav below the title */
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none; /* Hides the links initially */
+    }
+
+    nav ul li {
+        text-align: center; /* Centers the links */
+    }
+
+    /* Hamburger icon */
+    .hamburger {
+        display: inline-block; /* Shows the hamburger icon */
+        cursor: pointer;
+        /* Add styling for your hamburger icon here */
+    }
+
+    .hamburger.active + nav ul {
+        display: flex; /* Shows the links when active */
+    }
+}
+
+/* Add JavaScript to toggle the 'active' class on the hamburger icon */
 
 #logo {
     height: 50px; /* Adjust the height as needed */
