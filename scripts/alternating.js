@@ -5,107 +5,55 @@ document.addEventListener('DOMContentLoaded', function () {
         const inputText = document.getElementById('textInput').value;
         let alternatingText = '';
         let alternatePatternText = '';
+        let letterCount = 0; // Counter for actual letters to maintain the pattern
 
-        // Improved alternating case logic
+        // Convert to alternating case, ignoring non-letter characters
         for (let i = 0; i < inputText.length; i++) {
-            if (i % 2 === 0) {
-                alternatingText += inputText[i].toLowerCase();
-                alternatePatternText += inputText[i].toUpperCase();
+            if (inputText[i].match(/[a-zA-Z]/)) { // Check if it's a letter
+                if (letterCount % 2 === 0) {
+                    alternatingText += inputText[i].toLowerCase();
+                    alternatePatternText += inputText[i].toUpperCase();
+                } else {
+                    alternatingText += inputText[i].toUpperCase();
+                    alternatePatternText += inputText[i].toLowerCase();
+                }
+                letterCount++; // Only increment for letters
             } else {
-                alternatingText += inputText[i].toUpperCase();
-                alternatePatternText += inputText[i].toLowerCase();
+                // Directly append non-letter characters without altering the case
+                alternatingText += inputText[i];
+                alternatePatternText += inputText[i];
             }
         }
 
         document.getElementById('alternatingTextOutput').value = alternatingText;
-        document.getElementById('alternatingTextOutput1').value = alternatePatternText; // Corrected the ID here
+        document.getElementById('alternatingTextOutput1').value = alternatePatternText;
     });
 
-    // Simplified copy to clipboard function
-    function copyToClipboard(elementId) {
-        const textToCopy = document.getElementById(elementId).value;
-        navigator.clipboard.writeText(textToCopy);
+    // Function to copy text and provide feedback
+    function copyToClipboardAndFeedback(textAreaId, buttonId) {
+        const textArea = document.getElementById(textAreaId);
+        const button = document.getElementById(buttonId);
+        navigator.clipboard.writeText(textArea.value)
+            .then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000); // Show 'Copied!' for 2 seconds
+            })
+            .catch(err => {
+                console.error('Failed to copy text:', err);
+            });
     }
 
     // Event listeners for the copy buttons
     document.getElementById('copyButton').addEventListener('click', function () {
-        copyToClipboard('alternatingTextOutput');
+        copyToClipboardAndFeedback('alternatingTextOutput', 'copyButton');
     });
 
-    // Corrected event listener for the second copy button
     document.getElementById('copyButton1').addEventListener('click', function () {
-        copyToClipboard('alternatingTextOutput1'); // Corrected the ID here
+        copyToClipboardAndFeedback('alternatingTextOutput1', 'copyButton1');
     });
-});
-
-// Function to copy text and provide feedback
-function copyToClipboardAndFeedback(elementId, buttonId) {
-    const textArea = document.getElementById(elementId);
-    const button = document.getElementById(buttonId);
-    navigator.clipboard.writeText(textArea.value)
-        .then(() => {
-            // Temporary feedback
-            const originalText = button.innerHTML;
-            button.innerHTML = 'Copied!'; // Change button text to 'Copied!'
-            button.classList.add('copied'); // Add a class to style the 'copied' state
-            setTimeout(() => {
-                button.innerHTML = originalText; // Revert button text after 2 seconds
-                button.classList.remove('copied'); // Remove the 'copied' state styling
-            }, 2000);
-        })
-        .catch(err => {
-            console.error('Failed to copy text: ', err);
-        });
-}
-
-// Function to copy text and provide feedback
-function copyToClipboardAndFeedback(textAreaId, buttonId) {
-    const textArea = document.getElementById(textAreaId);
-    const button = document.getElementById(buttonId);
-    navigator.clipboard.writeText(textArea.value)
-        .then(() => {
-            const originalText = button.textContent;
-            button.textContent = 'Copied!';
-            button.classList.add('copied');
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.classList.remove('copied');
-            }, 2000); // Show 'Copied!' for 2 seconds
-        })
-        .catch(err => {
-            console.error('Failed to copy text:', err);
-        });
-}
-
-// Function to copy text and provide feedback
-function copyToClipboardAndFeedback(textAreaId, buttonId) {
-    const textArea = document.getElementById(textAreaId);
-    const button = document.getElementById(buttonId);
-    navigator.clipboard.writeText(textArea.value)
-        .then(() => {
-            const originalText = button.textContent;
-            button.textContent = 'Copied!';
-            button.classList.add('copied');
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.classList.remove('copied');
-            }, 2000); // Show 'Copied!' for 2 seconds
-        })
-        .catch(err => {
-            console.error('Failed to copy text:', err);
-        });
-}
-
-// Event listeners for the copy buttons
-document.getElementById('copyButton').addEventListener('click', function () {
-    copyToClipboardAndFeedback('alternatingTextOutput', 'copyButton');
-});
-
-document.getElementById('copyButton1').addEventListener('click', function () {
-    copyToClipboardAndFeedback('alternatingTextOutput1', 'copyButton1');
-});
-
-
-document.getElementById('copyButton1').addEventListener('click', function () {
-    copyToClipboardAndFeedback('alternatingTextOutput1', 'copyButton1');
 });
