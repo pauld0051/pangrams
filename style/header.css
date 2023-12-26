@@ -1,0 +1,100 @@
+/* Basic header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem; /* Adjusted to apply padding uniformly */
+}
+
+/* Flex container for header content */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo styles */
+#logo {
+    height: 50px; /* Adjust the height as needed */
+    /* Ensure there's no extra margin or padding that could offset the logo */
+    margin: 0;
+    padding: 0;
+}
+
+/* Title styles */
+header h1 {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0; /* Ensure title has no margin */
+}
+
+/* Navigation styles */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center; /* Align links vertically */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 0 10px; /* Adjust spacing as needed */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hamburger menu - hidden by default */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    /* Style as needed */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    /* Header content stacking */
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the start on smaller screens */
+    }
+
+    /* Adjust title to be full-width */
+    header h1 {
+        width: 100%;
+        order: 1; /* Make title appear after logo */
+    }
+
+    /* Navigation menu hidden by default on smaller screens */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 3; /* Ensure navigation menu is last */
+    }
+
+    nav ul li {
+        text-align: left; /* Align links to the left */
+        width: 100%;
+    }
+
+    nav ul li a {
+        padding: 10px 15px; /* Larger click area */
+        display: block; /* Makes the links fill the li */
+    }
+
+    /* Hamburger menu displayed on the right side */
+    .hamburger {
+        display: block; /* Show the hamburger icon */
+        position: absolute;
+        right: 1rem; /* Position to the right */
+        top: 1rem; /* Position from the top */
+        order: 2; /* Appears after the logo */
+    }
+
+    /* Show navigation menu when hamburger is active */
+    .hamburger.active + nav ul {
+        display: block; /* Show the navigation menu */
+    }
+}
