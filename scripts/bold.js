@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const boldText = '<b>' + inputText + '</b>';
 
         // Set the bold text as the value of the output textbox
-        const outputTextbox = document.getElementById('boldTextOutput');
+        const outputTextbox = document.getElementById('alternatingTextOutput');
         outputTextbox.value = boldText;
     });
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Event listener for the copy button
     document.getElementById('copyButton').addEventListener('click', function () {
-        const textToCopy = document.getElementById('boldTextOutput').value;
+        const textToCopy = document.getElementById('alternatingTextOutput').value;
         copyToClipboard(textToCopy);
     });
 });

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const italicText = '<i>' + inputText + '</i>';
 
         // Set the italic text as the value of the output textbox
-        const outputTextbox = document.getElementById('italicTextOutput');
+        const outputTextbox = document.getElementById('alternatingTextOutput');
         outputTextbox.value = italicText;
     });
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Event listener for the copy button
     document.getElementById('copyButton').addEventListener('click', function () {
-        const textToCopy = document.getElementById('italicTextOutput').value;
+        const textToCopy = document.getElementById('alternatingTextOutput').value;
         copyToClipboard(textToCopy);
     });
 });
