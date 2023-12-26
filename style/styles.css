@@ -11,34 +11,7 @@ body {
     background-color: #f4f4f4; /* Light grey background */
 }
 
-#logo {
-    height: 50px; /* Adjust the height as needed */
-}
-
-    header h1 {
-        order: 0; /* Resets the order */
-        flex-grow: 1; /* Allows the title to grow */
-        text-align: center;
-    }
-
-    nav ul {
-        display: none; /* Hide the nav links initially */
-        flex-direction: column;
-        width: 100%; /* Full width */
-        /* other styles */
-    }
-
-    nav ul li {
-        text-align: center;
-        /* other styles */
-    }
-
-    nav ul li a {
-        display: block; /* Makes the links fill the li */
-        /* other styles */
-    }
-
-h1 {
+h1, h2, h3, h4, h5 {
     margin-bottom: 2rem;
 }
 
@@ -85,7 +58,6 @@ input[type="text"] {
 /* Style the button */
 button {
     padding: 1rem 2rem;
-    background-color: #007bff; /* Blue background */
     color: #ffffff; /* White text */
     border: none; /* Remove border */
     border-radius: 8px; /* Rounded corners */
@@ -93,11 +65,22 @@ button {
     font-size: 1.25rem; /* Larger font size */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
     transition: transform 0.1s ease-in-out; /* Smooth transition for click */
+    margin: 0.5rem 0; /* Add spacing around buttons */
+}
+
+/* Specific style for the transform button */
+.transform-btn {
+    background-color: #28a745; /* Green background */
+}
+
+/* Specific style for the copy buttons */
+.copy-btn {
+    background-color: #17a2b8; /* Teal background */
 }
 
 /* Button interaction */
 button:hover {
-    background-color: #0056b3; /* Darker shade of blue on hover */
+    opacity: 0.8; /* Slight transparency on hover */
 }
 
 button:active {
@@ -136,5 +119,11 @@ button:active {
     margin-bottom: 1rem; /* Spacing below the textarea */
     background-color: #f8f8f8; /* Slightly off-white background */
     resize: none; /* Disable resizing */
+}
+
+/* Style for button when text is copied */
+.copied {
+    background-color: #28a745 !important; /* Change to a success color, green for example */
+    font-weight: bold; /* Optional: make the 'Copied!' text bold */
 }
 

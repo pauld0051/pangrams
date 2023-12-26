@@ -37,3 +37,32 @@ document.addEventListener('DOMContentLoaded', function () {
         copyToClipboard('alternatingTextOutput1'); // Corrected the ID here
     });
 });
+
+// Function to copy text and provide feedback
+function copyToClipboardAndFeedback(elementId, buttonId) {
+    const textArea = document.getElementById(elementId);
+    const button = document.getElementById(buttonId);
+    navigator.clipboard.writeText(textArea.value)
+        .then(() => {
+            // Temporary feedback
+            const originalText = button.innerHTML;
+            button.innerHTML = 'Copied!'; // Change button text to 'Copied!'
+            button.classList.add('copied'); // Add a class to style the 'copied' state
+            setTimeout(() => {
+                button.innerHTML = originalText; // Revert button text after 2 seconds
+                button.classList.remove('copied'); // Remove the 'copied' state styling
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+}
+
+// Event listeners for the copy buttons
+document.getElementById('copyButton').addEventListener('click', function () {
+    copyToClipboardAndFeedback('alternatingTextOutput', 'copyButton');
+});
+
+document.getElementById('copyButton1').addEventListener('click', function () {
+    copyToClipboardAndFeedback('alternatingTextOutput1', 'copyButton1');
+});
