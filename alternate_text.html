@@ -20,15 +20,18 @@
         <h1>Welcome to the Pangram Checker</h1>
     </header>
 
-    <!-- Main content area where your page content will go -->
-    <main>
-        <h2>Make Alternating Text</h2>
+ <!-- Main content area where your page content will go -->
+<main>
+    <h2>Make Alternating Text</h2>
     <form id="alternatingTextForm">
         <input type="text" id="textInput" placeholder="Enter your text here" required>
         <button type="submit">Transform</button>
     </form>
-    <div id="alternatingTextResult"></div>
-    </main>
+    <!-- Output textbox -->
+    <textarea id="alternatingTextOutput" placeholder="Your alternating text will appear here" readonly></textarea>
+    <!-- Copy button -->
+    <button id="copyButton" type="button">Copy Text</button>
+</main>
 
     <footer>
         <p>&copy; <script>document.write(new Date().getFullYear());</script> Paul Davis. All Rights Reserved.</p>
