@@ -58,10 +58,53 @@ function copyToClipboardAndFeedback(elementId, buttonId) {
         });
 }
 
+// Function to copy text and provide feedback
+function copyToClipboardAndFeedback(textAreaId, buttonId) {
+    const textArea = document.getElementById(textAreaId);
+    const button = document.getElementById(buttonId);
+    navigator.clipboard.writeText(textArea.value)
+        .then(() => {
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('copied');
+            }, 2000); // Show 'Copied!' for 2 seconds
+        })
+        .catch(err => {
+            console.error('Failed to copy text:', err);
+        });
+}
+
+// Function to copy text and provide feedback
+function copyToClipboardAndFeedback(textAreaId, buttonId) {
+    const textArea = document.getElementById(textAreaId);
+    const button = document.getElementById(buttonId);
+    navigator.clipboard.writeText(textArea.value)
+        .then(() => {
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('copied');
+            }, 2000); // Show 'Copied!' for 2 seconds
+        })
+        .catch(err => {
+            console.error('Failed to copy text:', err);
+        });
+}
+
 // Event listeners for the copy buttons
 document.getElementById('copyButton').addEventListener('click', function () {
     copyToClipboardAndFeedback('alternatingTextOutput', 'copyButton');
 });
+
+document.getElementById('copyButton1').addEventListener('click', function () {
+    copyToClipboardAndFeedback('alternatingTextOutput1', 'copyButton1');
+});
+
 
 document.getElementById('copyButton1').addEventListener('click', function () {
     copyToClipboardAndFeedback('alternatingTextOutput1', 'copyButton1');
