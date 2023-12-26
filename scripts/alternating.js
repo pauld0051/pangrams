@@ -39,5 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const textToCopy = document.getElementById('alternatingTextOutput').value;
       copyToClipboard(textToCopy);
     });
+    document.getElementById('copyButton1').addEventListener('click', function () {
+        // Since there are now two text areas, you need to decide which one to copy from
+        // This example will copy from the original alternating text output
+        const textToCopy = document.getElementById('alternatingTextOutput1').value;
+        copyToClipboard(textToCopy);
   });
   

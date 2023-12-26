@@ -127,7 +127,7 @@ button:active {
 }
 
 /* Style the output textarea */
-#alternatingTextOutput {
+#alternatingTextOutput, #alternatingTextOutput1 {
     width: 100%; /* Full width */
     padding: 0.5rem;
     height: 3em; /* Fixed height for the textarea */
