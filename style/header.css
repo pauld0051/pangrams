@@ -10,6 +10,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative; /* This will be the anchor for the absolute positioning of the hamburger */
 }
 
 /* Logo styles */
@@ -58,12 +59,14 @@ nav ul li a {
     .header-content {
         flex-direction: column;
         align-items: flex-start; /* Align items to the start on smaller screens */
+        justify-content: center; /* Center the items when in column layout */
     }
 
     /* Adjust title to be full-width */
     header h1 {
         width: 100%;
-        order: 1; /* Make title appear after logo */
+        order: 0; /* Title will appear at the top */
+        padding: 10px 0;
     }
 
     /* Navigation menu hidden by default on smaller screens */
@@ -86,11 +89,11 @@ nav ul li a {
 
     /* Hamburger menu displayed on the right side */
     .hamburger {
-        display: block; /* Show the hamburger icon */
+        display: block;
         position: absolute;
-        right: 1rem; /* Position to the right */
-        top: 1rem; /* Position from the top */
-        order: 2; /* Appears after the logo */
+        right: 1rem;
+        top: 1rem;
+        z-index: 100; /* Make sure the hamburger is above other content */
     }
 
     /* Show navigation menu when hamburger is active */

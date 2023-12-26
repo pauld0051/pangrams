@@ -12,4 +12,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const navUl = document.querySelector('nav ul');
         navUl.style.display = hamburger.classList.contains('active') ? 'flex' : 'none';
     });
+
+    window.addEventListener('resize', function() {
+        const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        const navUl = document.querySelector('nav ul');
+        if (screenWidth > 768) {
+            navUl.style.display = 'none';
+            hamburger.classList.remove('active');
+        } else {
+            navUl.style.display = hamburger.classList.contains('active') ? 'flex' : 'none';
+        }
+    });
+    
 });
