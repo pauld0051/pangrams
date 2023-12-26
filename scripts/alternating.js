@@ -18,12 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         document.getElementById('alternatingTextOutput').value = alternatingText;
-
-        // Check if the alternatePatternOutput exists before setting its value
-        const alternatePatternOutput = document.getElementById('alternatePatternOutput');
-        if (alternatePatternOutput) {
-            alternatePatternOutput.value = alternatePatternText;
-        }
+        document.getElementById('alternatingTextOutput1').value = alternatePatternText; // Corrected the ID here
     });
 
     // Simplified copy to clipboard function
@@ -37,11 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
         copyToClipboard('alternatingTextOutput');
     });
 
-    // Ensure this element and event listener exists only if the corresponding HTML is present
-    const copyButton1 = document.getElementById('copyButton1');
-    if (copyButton1) {
-        copyButton1.addEventListener('click', function () {
-            copyToClipboard('alternatingTextOutput1');
-        });
-    }
+    // Corrected event listener for the second copy button
+    document.getElementById('copyButton1').addEventListener('click', function () {
+        copyToClipboard('alternatingTextOutput1'); // Corrected the ID here
+    });
 });
