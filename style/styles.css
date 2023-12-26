@@ -14,18 +14,33 @@ body {
 header {
     background-color: #333; /* Dark background for the header */
     color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* Vertically centers the items in the container */
+    justify-content: space-between; /* Distributes space between items */
+    padding: 1rem; /* Adjust the padding as needed */
+}
+
+/* If .header-content is not wrapping your navigation, apply the styles directly to header nav */
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjust as needed */
+    padding: 0 1rem; /* Horizontal padding */
 }
 
 header nav ul {
     list-style: none;
-    padding: 1rem;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 header nav ul li {
-    display: inline;
-    margin-right: 20px;
+    margin-right: 20px; /* Space between nav items */
 }
 
 header nav ul li a {
@@ -34,24 +49,8 @@ header nav ul li a {
     font-weight: bold;
 }
 
-.header-content {
-    display: flex;
-    align-items: center; /* This will vertically center the logo with the navigation links */
-    justify-content: space-between; /* This spaces out the logo and navigation */
-    padding: 1rem; /* Adjust the padding as needed */
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
 #logo {
     height: 50px; /* Adjust the height as needed */
-    margin-right: 1rem; /* Space between logo and nav items */
 }
 
 h1 {
