@@ -71,11 +71,11 @@ nav ul li a {
 }
 
 .menu-item-dropdown > a:after {
-    content: '\f063'; /* Downward arrow for dropdown indication */
+    content: '\f078'; /* Downward arrow for dropdown indication */
     float: right; /* Push arrow to the right */
     margin-right: 10px; /* Right margin for the arrow */
 }
 
 .menu-item-dropdown.active > a:after {
-    content: '\f062'; /* Upward arrow when submenu is active */
+    content: '\f077'; /* Upward arrow when submenu is active */
 }
