@@ -9,31 +9,13 @@ header {
     right: 0; /* Span from left to right */
     z-index: 10; /* Higher z-index so it's above other content */
     background-color: #333; /* Background color */
-    padding: 0.5rem 1rem; /* Padding on top/bottom and left/right */
+    padding: 1rem; /* Adjusted padding */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for depth */
-}
-.menu-toggle {
-    font-size: 2rem; /* Size of the hamburger icon */
-    color: #fff; /* Icon color */
-    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
-}
-
-.header-content {
-    display: flex; /* Align items in a row */
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space out logo and toggle button */
-    position: fixed; /* Fixed to the top */
-    top: 0;
-    left: 0;
-    width: 100%; /* Full width */
-    padding: 10px; /* Add some padding */
-    background-color: #333; /* Match your desired header color */
-    z-index: 1010; /* Above the menu */
 }
 
 #logo {
     height: 40px; /* Adjust logo size for a cleaner look */
-    margin-right: 0.5rem; /* Add some space between logo and title */
+    margin-right: 10px; /* Add some space between logo and title */
 }
 
 header h1 {
@@ -41,26 +23,30 @@ header h1 {
     text-align: center; /* Center the title text */
     color: #fff; /* Text color */
     font-size: 1.2rem; /* Reduce font size for mobile */
-    padding: 0; /* Remove padding to prevent misalignment */
     margin: 0; /* Remove margin to prevent misalignment */
+}
+
+.menu-toggle {
+    font-size: 2rem; /* Size of the hamburger icon */
+    color: #fff; /* Icon color */
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
 }
 
 .main-menu {
     display: none; /* Hide by default */
     flex-direction: column; /* Stack items vertically */
-    position: fixed; /* Fixed to the viewport */
+    position: absolute; /* Positioned relative to the nearest positioned ancestor */
     top: 60px; /* Below the header */
     left: 0;
     width: 100%;
-    height: calc(100% - 60px); /* Take remaining height */
     background-color: #fff; /* Menu background */
-    z-index: 1000;
+    z-index: 9; /* Below the header z-index */
     overflow-y: auto; /* Allow scrolling within menu */
+    padding-bottom: 1rem; /* Padding at the bottom */
 }
 
 .main-menu.show {
     display: flex; /* Show the menu */
-    top: 60px; /* Adjust this value to the height of your header */
 }
 
 nav ul li {
@@ -72,7 +58,6 @@ nav ul li a {
     padding: 15px 20px; /* Larger touch area */
     border-bottom: 1px solid #eee; /* Separate the items */
     color: #333; /* Text color */
-    background: none; /* No background */
 }
 
 .menu-item-dropdown .submenu {
@@ -85,14 +70,14 @@ nav ul li a {
     display: block; /* Display submenu when active */
 }
 
-.menu-item-dropdown > a:after {
+.menu-item-dropdown > a:after,
+.menu-item-dropdown.active > a:after {
+    font-family: 'FontAwesome'; /* Ensure this is the correct font family for your version of FontAwesome */
     content: '\f078'; /* Downward arrow for dropdown indication */
     float: right; /* Push arrow to the right */
     margin-right: 10px; /* Right margin for the arrow */
-    font-family: 'FontAwesome';
 }
 
 .menu-item-dropdown.active > a:after {
     content: '\f077'; /* Upward arrow when submenu is active */
-    font-family: 'FontAwesome';
 }
