@@ -16,38 +16,34 @@
     <header>
         <div class="header-content">
             <img src="images/pangram-checker-logo-32.png" alt="Pangram Checker Logo" id="logo">
-            <h1>Pangram World - The Book (coming soon)</h1>
-            <nav class="header-content">
-                <ul>
-                    <li><a href="book">The Pangram Book</a></li>
-                    <li class="dropdown">
-                        <a href="alternate_text">Alternate your text</a>
-                        <!-- Dropdown menu content -->
-                        <ul class="dropdown-content">
-                            <li><a href="bold_text">Bold your text</a></li>
-                            <li><a href="italics_text">Italicize your text</a></li>
-                </ul>
-            </nav>
+            <h1>Pangram World - The Book - Coming Soon</h1>
+        <nav class="header-content">
+            <ul>
+                <li><a href="book">The Pangram Book</a></li>
+                <li class="dropdown">
+                    <a href="alternate_text">Alternate your text</a>
+                    <!-- Dropdown menu content -->
+                    <ul class="dropdown-content">
+                        <li><a href="bold_text">Bold your text</a></li>
+                        <li><a href="italics_text">Italicize your text</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Main content area where your page content will go -->
     <main>
-        <h2>Bold Text Maker</h2>
-        <form id="boldTextForm">
-            <input type="text" id="boldTextInput" placeholder="Enter your text here" required>
-            <button type="submit" class="transform-btn">Transform</button>
+        <h2>Check Your Phrase</h2>
+        <form id="pangramForm">
+            <input type="text" id="phraseInput" placeholder="Enter your phrase here" required>
+            <button type="submit" class="transform-btn">Check</button>
         </form>
-        <!-- Output textbox -->
-        <textarea id="boldTextOutput" placeholder="Your bold text will appear here" readonly></textarea>
-        <!-- Copy button -->
-        <button id="boldCopyButton" type="button" class="copy-btn">Copy Text</button>
-    </main> 
+        <div id="result"></div>
+    </main>
 
     <footer>
         <p>&copy; <script>document.write(new Date().getFullYear());</script> Paul Davis. All Rights Reserved.</p>
         <!-- Add additional footer content such as links or contact information here -->
     </footer>
-
     <script src="scripts/pangrams.js"></script>
 </body>
 </html>
