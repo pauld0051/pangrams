@@ -45,6 +45,15 @@ nav ul li a {
     text-decoration: none;
 }
 
+.main-menu.show {
+    display: flex; /* Or "block", depending on your desired layout */
+    flex-direction: column;
+}
+
+.submenu.show {
+    display: block; /* Or whatever display type you wish for the submenu */
+}
+
 /* Modernised menu toggle icon */
 .menu-toggle {
     display: none; /* Hidden by default, shown in media query below */
