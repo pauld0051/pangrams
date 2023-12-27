@@ -1,11 +1,21 @@
 /* mobile.css */
+header {
+    display: flex; /* Use flexbox for positioning */
+    justify-content: space-between; /* Space between logo and hamburger menu */
+    align-items: center; /* Vertically align items in the middle */
+    position: fixed; /* Fixed position to stay at the top */
+    top: 0;
+    left: 0;
+    right: 0; /* Span from left to right */
+    z-index: 10; /* Higher z-index so it's above other content */
+    background-color: #333; /* Background color */
+    padding: 0.5rem 1rem; /* Padding on top/bottom and left/right */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for depth */
+}
 .menu-toggle {
-    display: block; /* Show the menu toggle */
-    position: fixed; /* Fixed position regardless of scroll */
-    right: 10px; /* Position it on the right */
-    top: 10px; /* Position it at the top */
-    font-size: 2rem; /* Increase size for better touch */
-    z-index: 1001; /* Ensure it's above the main menu */
+    font-size: 2rem; /* Size of the hamburger icon */
+    color: #fff; /* Icon color */
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
 }
 
 .header-content {
@@ -23,12 +33,16 @@
 
 #logo {
     height: 40px; /* Adjust logo size for a cleaner look */
+    margin-right: 0.5rem; /* Add some space between logo and title */
 }
 
 header h1 {
-    font-size: 1.2rem; /* Smaller font size */
-    color: #fff; /* Color of the header title */
-    margin-left: 50px; /* Space for the logo */
+    flex-grow: 1; /* Allows the title to grow and use available space */
+    text-align: center; /* Center the title text */
+    color: #fff; /* Text color */
+    font-size: 1.2rem; /* Reduce font size for mobile */
+    padding: 0; /* Remove padding to prevent misalignment */
+    margin: 0; /* Remove margin to prevent misalignment */
 }
 
 .main-menu {
@@ -46,6 +60,7 @@ header h1 {
 
 .main-menu.show {
     display: flex; /* Show the menu */
+    top: 60px; /* Adjust this value to the height of your header */
 }
 
 nav ul li {
