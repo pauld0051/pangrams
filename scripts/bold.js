@@ -38,38 +38,48 @@ const boldMap = {
   };
   
   document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('boldTextForm').addEventListener('submit', function (e) {
+    // Define boldMap here or make sure it's accessible within this scope
+  
+    const formElement = document.getElementById('alternatingTextForm');
+    const inputElement = document.getElementById('textInput');
+    const outputElement = document.getElementById('alternatingTextOutput');
+    const copyButtonElement = document.getElementById('copyButton');
+  
+    if (formElement && inputElement && outputElement && copyButtonElement) {
+      formElement.addEventListener('submit', function (e) {
         e.preventDefault();
-
-        let inputText = document.getElementById('boldTextInput').value;
+  
+        let inputText = inputElement.value;
         let boldText = '';
-
+  
         // Convert each character to its bold equivalent
         for (let char of inputText) {
-            boldText += boldMap[char] || char; // Fallback to the original character if no bold equivalent
+          boldText += boldMap[char] || char; // Fallback to the original character if no bold equivalent
         }
-
+  
         // Set the bold text as the value of the output element
-        const outputElement = document.getElementById('boldTextOutput');
         outputElement.textContent = boldText; // Use textContent to set text
-        outputElement.style.height = ""; // Reset the height
-        outputElement.style.height = outputElement.scrollHeight + "px"; // Adjust the height to fit content
-    });
-
-    // Function to copy text to clipboard
-    function copyToClipboard(text) {
+        // Since we're using a div, we will not adjust the height here
+      });
+  
+      // Function to copy text to clipboard
+      function copyToClipboard(text) {
         const dummy = document.createElement('textarea');
         document.body.appendChild(dummy);
         dummy.value = text;
         dummy.select();
         document.execCommand('copy');
         document.body.removeChild(dummy);
-    }
-
-    // Event listener for the copy button
-    document.getElementById('boldCopyButton').addEventListener('click', function () {
+      }
+  
+      // Event listener for the copy button
+      copyButtonElement.addEventListener('click', function () {
         // Copy the value, which will retain bold formatting when pasted
-        const textToCopy = document.getElementById('boldTextOutput').textContent;
+        const textToCopy = outputElement.textContent;
         copyToClipboard(textToCopy);
-    });
-});
+      });
+    } else {
+      console.error('One or more elements could not be found!');
+    }
+  });
+  
