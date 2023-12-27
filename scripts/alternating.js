@@ -25,8 +25,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        document.getElementById('alternatingTextOutput').value = alternatingText;
-        document.getElementById('alternatingTextOutput1').value = alternatePatternText;
+        // Update the value and the height of the first text area
+        const textArea1 = document.getElementById('alternatingTextOutput');
+        textArea1.value = alternatingText;
+        textArea1.style.height = 'auto';
+        textArea1.style.height = textArea1.scrollHeight + 'px';
+
+        // Update the value and the height of the second text area
+        const textArea2 = document.getElementById('alternatingTextOutput1');
+        textArea2.value = alternatePatternText;
+        textArea2.style.height = 'auto';
+        textArea2.style.height = textArea2.scrollHeight + 'px';
     });
 
     // Function to copy text and provide feedback
