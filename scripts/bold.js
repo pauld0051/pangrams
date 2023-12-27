@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function () {
 const boldMap = {
     'a': '𝗮', 'b': '𝗯', 'c': '𝗰', 'd': '𝗱', 'e': '𝗲', 
     'f': '𝗳', 'g': '𝗴', 'h': '𝗵', 'i': '𝗶', 'j': '𝗷', 
@@ -37,49 +38,41 @@ const boldMap = {
 
   };
   
-  document.addEventListener('DOMContentLoaded', function () {
-    // Define boldMap here or make sure it's accessible within this scope
-  
-    const formElement = document.getElementById('alternatingTextForm');
-    const inputElement = document.getElementById('textInput');
-    const outputElement = document.getElementById('alternatingTextOutput');
-    const copyButtonElement = document.getElementById('copyButton');
-  
-    if (formElement && inputElement && outputElement && copyButtonElement) {
-      formElement.addEventListener('submit', function (e) {
-        e.preventDefault();
-  
-        let inputText = inputElement.value;
-        let boldText = '';
-  
-        // Convert each character to its bold equivalent
-        for (let char of inputText) {
-          boldText += boldMap[char] || char; // Fallback to the original character if no bold equivalent
-        }
-  
-        // Set the bold text as the value of the output element
-        outputElement.textContent = boldText; // Use textContent to set text
-        // Since we're using a div, we will not adjust the height here
-      });
-  
-      // Function to copy text to clipboard
-      function copyToClipboard(text) {
-        const dummy = document.createElement('textarea');
-        document.body.appendChild(dummy);
-        dummy.value = text;
-        dummy.select();
-        document.execCommand('copy');
-        document.body.removeChild(dummy);
-      }
-  
-      // Event listener for the copy button
-      copyButtonElement.addEventListener('click', function () {
-        // Copy the value, which will retain bold formatting when pasted
-        const textToCopy = outputElement.textContent;
-        copyToClipboard(textToCopy);
-      });
-    } else {
-      console.error('One or more elements could not be found!');
+  document.getElementById('alternatingTextForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    let inputText = document.getElementById('textInput').value;
+    let boldText = '';
+
+    // Convert each character to its bold equivalent
+    for (let char of inputText) {
+        boldText += boldMap[char] || char; // Fallback to the original character if no bold equivalent
     }
-  });
-  
+
+    // Set the bold text as the value of the output element
+    const outputElement = document.getElementById('alternatingTextOutput');
+    outputElement.textContent = boldText; // Use textContent to set text
+    // Adjust the height to fit content if outputElement is a textarea
+    if (outputElement instanceof HTMLTextAreaElement) {
+        outputElement.style.height = ''; // Reset the height
+        outputElement.style.height = outputElement.scrollHeight + 'px';
+    }
+});
+
+// Function to copy text to clipboard
+function copyToClipboard(text) {
+    const dummy = document.createElement('textarea');
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(dummy);
+}
+
+// Event listener for the copy button
+document.getElementById('copyButton').addEventListener('click', function () {
+    // Copy the value, which will retain bold formatting when pasted
+    const textToCopy = document.getElementById('alternatingTextOutput').textContent;
+    copyToClipboard(textToCopy);
+});
+});
