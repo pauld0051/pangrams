@@ -132,7 +132,7 @@ nav ul li a {
 
     /* Hamburger menu visible */
     .hamburger {
-        display: block;
+        display: block !important;
         user-select: none;
     }
 
