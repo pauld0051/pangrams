@@ -32,13 +32,16 @@
 
     <!-- Main content area where your page content will go -->
     <main>
-        <h2>Check Your Phrase</h2>
-        <form id="pangramForm">
-            <input type="text" id="phraseInput" placeholder="Enter your phrase here" required>
-            <button type="submit" class="transform-btn">Check</button>
+        <h2>Bold Text Maker</h2>
+        <form id="boldTextForm">
+            <input type="text" id="boldTextInput" placeholder="Enter your text here" required>
+            <button type="submit" class="transform-btn">Transform</button>
         </form>
-        <div id="result"></div>
-    </main>
+        <!-- Output textbox -->
+        <textarea id="boldTextOutput" placeholder="Your bold text will appear here" readonly></textarea>
+        <!-- Copy button -->
+        <button id="boldCopyButton" type="button" class="copy-btn">Copy Text</button>
+    </main> 
 
     <footer>
         <p>&copy; <script>document.write(new Date().getFullYear());</script> Paul Davis. All Rights Reserved.</p>

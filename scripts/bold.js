@@ -38,10 +38,10 @@ const boldMap = {
   };
   
   document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('alternatingTextForm').addEventListener('submit', function (e) {
+    document.getElementById('boldTextForm').addEventListener('submit', function (e) {
         e.preventDefault();
 
-        let inputText = document.getElementById('textInput').value;
+        let inputText = document.getElementById('boldTextInput').value;
         let boldText = '';
 
         // Convert each character to its bold equivalent
@@ -50,10 +50,10 @@ const boldMap = {
         }
 
         // Set the bold text as the value of the output element
-        const outputElement = document.getElementById('alternatingTextOutput');
+        const outputElement = document.getElementById('boldTextOutput');
         outputElement.textContent = boldText; // Use textContent to set text
-        outputElement.style.whiteSpace = 'nowrap'; // Prevent text wrapping
-        outputElement.style.overflowX = 'auto'; // Add horizontal scroll if necessary
+        outputElement.style.height = ""; // Reset the height
+        outputElement.style.height = outputElement.scrollHeight + "px"; // Adjust the height to fit content
     });
 
     // Function to copy text to clipboard
@@ -67,9 +67,9 @@ const boldMap = {
     }
 
     // Event listener for the copy button
-    document.getElementById('copyButton').addEventListener('click', function () {
+    document.getElementById('boldCopyButton').addEventListener('click', function () {
         // Copy the value, which will retain bold formatting when pasted
-        const textToCopy = document.getElementById('alternatingTextOutput').textContent;
+        const textToCopy = document.getElementById('boldTextOutput').textContent;
         copyToClipboard(textToCopy);
     });
 });
