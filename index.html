@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pangram World</title>
     <link rel="stylesheet" href="style/styles.css">
-    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/desktop.css" media="screen and (min-width: 769px)">
+    <link rel="stylesheet" href="style/mobile.css" media="screen and (max-width: 768px)">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script src="scripts/main.js" defer></script>
@@ -20,21 +22,22 @@
                 <img src="images/pangram-checker-logo-32.png" alt="Pangram Checker Logo" id="logo">
             </a>
             <h1>Pangram World</h1>
-            <div class="menu-toggle"><i class="fas fa-plus"></i></div> <!-- FontAwesome icon for menu toggle -->
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div> <!-- Changed to bars icon for menu toggle -->
             <nav>
                 <ul class="main-menu">
                     <li><a href="book" class="nav-link">The Pangram Book</a></li>
                     <li class="menu-item-dropdown">
-                        <a href="javascript:void(0);" class="nav-link menu-toggle">Alternate your text <i class="fas fa-chevron-down"></i></a>
+                        <a href="javascript:void(0);" class="nav-link dropdown-toggle">More <i class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
                             <li><a href="bold_text">Bold your text</a></li>
                             <li><a href="italics_text">Italicize your text</a></li>
+                            <li><a href="alternate_text">Alternate your text</a></li> <!-- Moved inside the dropdown -->
                         </ul>
                     </li>
                 </ul>
             </nav>
         </div>
-    </header>    
+    </header>     
     <!-- Main content area where your page content will go -->
     <main>
         <h2>Check Your Phrase</h2>

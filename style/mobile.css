@@ -1,0 +1,105 @@
+/* Modernised menu toggle icon for mobile */
+.menu-toggle {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Show the main menu with a flex column on small screens */
+.main-menu.show {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start */
+    width: 100%; /* Full width */
+}
+
+/* Dropdown toggle link style */
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Aligns the text and icon */
+}
+
+/* Hide the main menu by default, show when menu-toggle is clicked */
+.main-menu {
+    display: none;
+}
+
+/* Style when the menu is toggled open */
+.menu-open .main-menu {
+    display: block;
+}
+
+/* Submenu style */
+.submenu {
+    display: none;
+    position: static; /* Normal document flow on mobile */
+    width: calc(100% - 20px); /* Full width minus padding */
+    background-color: #444; /* Darker background for modern look */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 0; /* No spacing above the submenu on mobile */
+}
+
+/* Submenu item style */
+.submenu li a {
+    padding: 10px 15px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.submenu li a:hover {
+    background-color: #555; /* Hover effect */
+}
+
+/* Style for when submenu is open */
+.menu-item-dropdown.active > a.menu-toggle:after {
+    content: '\f077'; /* FontAwesome up arrow */
+    font-family: 'FontAwesome';
+    padding-left: 5px;
+}
+
+/* Show submenu when its toggle is clicked */
+.menu-item-dropdown.active .submenu {
+    display: block;
+}
+
+/* Full-width title on small screens */
+header h1 {
+    width: 100%;
+    order: 0;
+    padding: 10px 0;
+}
+
+/* Hide navigation menu initially */
+nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    order: 3;
+}
+
+/* Full-width links with larger click area */
+nav ul li {
+    text-align: left;
+    width: 100%;
+}
+
+nav ul li a {
+    padding: 10px 15px;
+}
+
+/* Hamburger menu visible */
+.menu-toggle {
+    display: block;
+    margin-left: auto; /* Align to the right of the header */
+    user-select: none;
+}
+
+/* Footer padding adjustment */
+footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
