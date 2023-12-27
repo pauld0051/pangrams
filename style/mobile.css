@@ -103,3 +103,32 @@ footer {
     padding-left: 2rem;
     padding-right: 2rem;
 }
+
+/* Ensure the hamburger menu is visible on mobile */
+.menu-toggle {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Hide the main menu by default, show when menu-toggle is clicked */
+.main-menu {
+    display: none;
+    flex-direction: column;
+}
+
+/* Show the menu when it's toggled */
+.main-menu.show {
+    display: flex;
+}
+
+/* Style the dropdown for mobile */
+.menu-item-dropdown .submenu {
+    display: none; /* Hide the submenu */
+    background-color: #444; /* Submenu background color */
+    width: 100%;
+}
+
+.menu-item-dropdown.active .submenu {
+    display: block; /* Show the submenu when active */
+}

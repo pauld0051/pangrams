@@ -1,2 +1,30 @@
-/* Styles specific to desktop screens go here */
-/* You may not need this file if all desktop styles are in base.css */
+/* Hide the hamburger menu on desktop */
+.menu-toggle {
+    display: none;
+}
+
+/* Display the navigation menu as a row */
+nav ul {
+    display: flex;
+}
+
+/* Style the dropdown for desktop */
+.menu-item-dropdown:hover .submenu,
+.menu-item-dropdown:focus-within .submenu {
+    display: block;
+    position: absolute;
+    background-color: #333;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.menu-item-dropdown:hover .submenu a,
+.menu-item-dropdown:focus-within .submenu a {
+    color: #fff;
+}
+
+.menu-item-dropdown:hover .dropdown-toggle i,
+.menu-item-dropdown:focus-within .dropdown-toggle i {
+    transform: rotate(180deg);
+}
