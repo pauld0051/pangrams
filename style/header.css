@@ -2,7 +2,7 @@
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem; /* Adjusted to apply padding uniformly */
+    padding: 1rem; /* Uniform padding */
 }
 
 /* Flex container for header content */
@@ -10,13 +10,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative; /* This will be the anchor for the absolute positioning of the hamburger */
+    position: relative;
 }
 
 /* Logo styles */
 #logo {
-    height: 50px; /* Adjust the height as needed */
-    /* Ensure there's no extra margin or padding that could offset the logo */
+    height: 50px;
     margin: 0;
     padding: 0;
 }
@@ -25,20 +24,20 @@ header {
 header h1 {
     flex-grow: 1;
     text-align: center;
-    margin: 0; /* Ensure title has no margin */
+    margin: 0;
 }
 
 /* Navigation styles */
 nav ul {
     list-style-type: none;
     display: flex;
-    align-items: center; /* Align links vertically */
+    align-items: center;
     margin: 0;
     padding: 0;
 }
 
 nav ul li {
-    padding: 0 10px; /* Adjust spacing as needed */
+    padding: 0 10px;
 }
 
 nav ul li a {
@@ -46,137 +45,119 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Hamburger menu - hidden by default */
-.hamburger {
-    display: none;
-    cursor: pointer;
-    /* Style as needed */
-}
-
-/* Style the dropdown link */
+/* Dropdown link style */
 .dropdown {
-    position: relative; /* Set the dropdown to relative positioning */
+    position: relative;
 }
 
-/* Style the dropdown content */
+/* Dropdown content style */
 .dropdown-content {
-    display: block;
-    position: static; /* let it flow in the document */
-    background-color: transparent;
-    box-shadow: none;
-    margin-top: 5px;
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to .dropdown */
+    background-color: #f9f9f9; /* Light background */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Dropdown shadow */
+    min-width: 160px; /* Minimum width */
+    z-index: 1;
 }
 
-/* Display the dropdown content on hover */
-.dropdown-content li a:hover {
-    background-color: #555; /* darker background on hover */
-    color: #fff; /* white text on hover */
+/* Dropdown link hover and focus styles */
+.dropdown a:hover, .dropdown a:focus {
+    background-color: #555; /* Darker background for the dropdown link */
+    color: #fff;
 }
 
-/* Style the dropdown content links */
+/* Dropdown content link styles */
 .dropdown-content li a {
-    color: black; /* Text color for the dropdown links */
-    padding: 12px 16px; /* Padding for the dropdown links */
-    text-decoration: none; /* No underline */
-    display: block; /* Display as block to fill the width of the dropdown */
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: #fff; /* White background for dropdown links */
 }
 
-/* Change the background color of dropdown links on hover */
+/* Dropdown content link hover styles */
 .dropdown-content li a:hover {
-    background-color: #f1f1f1; /* Light grey background on hover */
+    background-color: #ddd; /* Light grey background on hover */
+}
+
+/* Hamburger menu style */
+.hamburger {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 100;
 }
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
-    /* Header content stacking */
+    /* Stack header content */
     .header-content {
         flex-direction: column;
-        align-items: flex-start; /* Align items to the start on smaller screens */
-        justify-content: center; /* Center the items when in column layout */
+        align-items: flex-start;
+        justify-content: center;
     }
 
-    /* Adjust title to be full-width */
+    /* Full-width title */
     header h1 {
         width: 100%;
-        order: 0; /* Title will appear at the top */
+        order: 0;
         padding: 10px 0;
     }
 
-    /* Navigation menu hidden by default on smaller screens */
+    /* Hide navigation menu */
     nav ul {
         display: none;
         flex-direction: column;
         width: 100%;
-        order: 3; /* Ensure navigation menu is last */
+        order: 3;
     }
 
+    /* Full-width links with larger click area */
     nav ul li {
-        text-align: left; /* Align links to the left */
+        text-align: left;
         width: 100%;
     }
 
     nav ul li a {
-        padding: 10px 15px; /* Larger click area */
-        display: block; /* Makes the links fill the li */
+        padding: 10px 15px;
     }
 
-    /* Style adjustments for the dropdown to be full-width for easier access on mobile */
-    .dropdown-content {
-        box-shadow: none;
-        position: static; /* Let it flow in the document */
-        width: 100%; /* Full width */
+    /* Show navigation and dropdown menu when active */
+    .hamburger.active + nav ul, .dropdown-content.show {
+        display: block;
     }
 
-    /* Hamburger menu displayed on the right side */
+    /* Hamburger menu visible */
     .hamburger {
         display: block;
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-        z-index: 100; /* Make sure the hamburger is above other content */
-        font-size: 2rem; /* Larger icon for easy touch */
-        user-select: none; /* Prevent text selection on double click */
+        user-select: none;
     }
 
-    /* Show navigation menu when hamburger is active */
-    .hamburger.active + nav ul {
-        display: block; /* Show the navigation menu */
-    }
-
+    /* Footer padding adjustment */
     footer {
-        padding-left: 2rem; /* Match the main content side padding */
-        padding-right: 2rem; /* Match the main content side padding */
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
 
-/* Ensure the footer has the same max-width and horizontal margins as the main content */
+/* Footer style */
 footer {
     color: #fff;
     text-align: center;
-    padding: 1rem; /* Keep the top and bottom padding */
+    padding: 1rem;
     background-color: #333;
-    max-width: 800px; /* Match the max-width of your main content and header */
-    margin-left: auto; /* Center align the footer */
-    margin-right: auto; /* Center align the footer */
-    position: relative; /* Or you can remove the position property if not needed */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
 }
 
-/* Show dropdown menu when 'menu-active' class is added to the body */
-body.menu-active nav ul {
-    display: flex;
-}
-
-/* Hide dropdown content on larger screens */
-@media (min-width: 769px) {
-    .dropdown-content {
-        display: none;
-    }
-
-    /* Show dropdown content on hover */
+/* Show dropdown on hover on non-touch devices with a hover capability */
+@media (hover: hover) {
     .dropdown:hover .dropdown-content {
         display: block;
-        position: absolute;
     }
 }
-
-

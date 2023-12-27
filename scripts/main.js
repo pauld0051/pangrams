@@ -1,23 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
+    const dropdown = document.querySelector('.dropdown > a');
+    const dropdownContent = document.querySelector('.dropdown-content');
 
+    // Toggle hamburger menu
     hamburger.addEventListener('click', function () {
-        // Toggle an 'active' class instead of directly changing the style
-        document.body.classList.toggle('menu-active');
+        this.classList.toggle('active');
+        const navUl = document.querySelector('nav ul');
+        navUl.classList.toggle('show');
     });
 
-    // If the user taps outside the menu, close the menu
-    document.addEventListener('click', function (event) {
-        if (!hamburger.contains(event.target) && !event.target.matches('.dropdown a')) {
-            document.body.classList.remove('menu-active');
+    // Toggle dropdown on mobile
+    dropdown.addEventListener('click', function (event) {
+        // Prevent default link behaviour only on mobile
+        if (window.innerWidth <= 768) {
+            event.preventDefault();
+            dropdownContent.classList.toggle('show');
         }
     });
-});
 
-// Adjust menu visibility based on 'menu-active' class
-window.addEventListener('resize', function () {
-    if (window.innerWidth > 768) {
-        // Reset any inline styles added by JavaScript
-        document.body.classList.remove('menu-active');
-    }
+    // Close the dropdown if clicking outside of it
+    window.addEventListener('click', function (event) {
+        if (!event.target.matches('.dropdown > a') && !event.target.closest('.dropdown-content')) {
+            dropdownContent.classList.remove('show');
+        }
+    });
+
+    // Close dropdown when resizing to wider screens
+    window.addEventListener('resize', function() {
+        const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        if (screenWidth > 768) {
+            dropdownContent.classList.remove('show');
+        }
+    });
 });
