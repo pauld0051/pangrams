@@ -45,6 +45,28 @@ nav ul li a {
     text-decoration: none;
 }
 
+/* Modernised menu toggle icon */
+.menu-toggle {
+    display: none; /* Hidden by default, shown in media query below */
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Submenu style */
+.submenu {
+    display: none; /* Hidden by default, shown when parent is clicked */
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Submenu item style */
+.submenu li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
 /* Dropdown link style */
 .dropdown {
     position: relative;
@@ -122,6 +144,38 @@ nav ul li a {
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto; /* Align to the right of the header */
+    }
+
+    /* Hide the main menu by default, show when menu-toggle is clicked */
+    .main-menu {
+        display: none;
+    }
+
+    /* Style when the menu is toggled open */
+    .menu-open .main-menu {
+        display: block;
+    }
+
+    /* Submenu toggle icon */
+    .menu-item-dropdown > a.menu-toggle:after {
+        content: '\f078'; /* FontAwesome down arrow */
+        font-family: 'FontAwesome';
+        padding-left: 5px;
+    }
+
+    /* Style for when submenu is open */
+    .menu-item-dropdown.active > a.menu-toggle:after {
+        content: '\f077'; /* FontAwesome up arrow */
+    }
+
+    /* Show submenu when its toggle is clicked */
+    .menu-item-dropdown.active .submenu {
+        display: block;
     }
 
     /* Full-width title */

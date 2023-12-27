@@ -20,14 +20,13 @@
                 <img src="images/pangram-checker-logo-32.png" alt="Pangram Checker Logo" id="logo">
             </a>
             <h1>Pangram World</h1>
-            <div class="hamburger"><i class="fas fa-bars"></i></div> <!-- FontAwesome icon -->
+            <div class="menu-toggle"><i class="fas fa-plus"></i></div> <!-- FontAwesome icon for menu toggle -->
             <nav>
-                <ul>
+                <ul class="main-menu">
                     <li><a href="book" class="nav-link">The Pangram Book</a></li>
-                    <li class="dropdown">
-                        <a href="alternate_text" class="nav-link">Alternate your text</a>
-                        <!-- Dropdown menu content -->
-                        <ul class="dropdown-content">
+                    <li class="menu-item-dropdown">
+                        <a href="javascript:void(0);" class="nav-link menu-toggle">Alternate your text <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
                             <li><a href="bold_text">Bold your text</a></li>
                             <li><a href="italics_text">Italicize your text</a></li>
                         </ul>
@@ -35,7 +34,7 @@
                 </ul>
             </nav>
         </div>
-    </header>  
+    </header>    
     <!-- Main content area where your page content will go -->
     <main>
         <h2>Check Your Phrase</h2>
