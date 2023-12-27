@@ -1,81 +1,81 @@
 /* mobile.css */
 .menu-toggle {
-    display: block;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 2rem;
+    display: block; /* Show the menu toggle */
+    position: fixed; /* Fixed position regardless of scroll */
+    right: 10px; /* Position it on the right */
+    top: 10px; /* Position it at the top */
+    font-size: 2rem; /* Increase size for better touch */
     z-index: 1001; /* Ensure it's above the main menu */
 }
 
-/* When the main menu is shown, let's use a fixed position to cover the whole screen */
-.main-menu.show {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    position: fixed; /* Fixed to the viewport */
+.header-content {
+    display: flex; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out logo and toggle button */
+    position: fixed; /* Fixed to the top */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%; /* Full screen height */
-    background-color: rgba(255, 255, 255, 0.98); /* Slightly transparent white */
-    overflow-y: auto; /* Allow scrolling if content is longer than the screen */
-    padding-top: 60px; /* Space for the close button */
-    z-index: 1000;
+    width: 100%; /* Full width */
+    padding: 10px; /* Add some padding */
+    background-color: #333; /* Match your desired header color */
+    z-index: 1010; /* Above the menu */
 }
 
-/* Adjust the styles for mobile navigation links */
+#logo {
+    height: 40px; /* Adjust logo size for a cleaner look */
+}
+
+header h1 {
+    font-size: 1.2rem; /* Smaller font size */
+    color: #fff; /* Color of the header title */
+    margin-left: 50px; /* Space for the logo */
+}
+
+.main-menu {
+    display: none; /* Hide by default */
+    flex-direction: column; /* Stack items vertically */
+    position: fixed; /* Fixed to the viewport */
+    top: 60px; /* Below the header */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px); /* Take remaining height */
+    background-color: #fff; /* Menu background */
+    z-index: 1000;
+    overflow-y: auto; /* Allow scrolling within menu */
+}
+
+.main-menu.show {
+    display: flex; /* Show the menu */
+}
+
 nav ul li {
-    display: block; /* Stack the list items */
-    width: 100%; /* Full width */
+    width: 100%; /* Full width for list items */
 }
 
 nav ul li a {
-    display: block; /* Make the link fill the list item */
-    width: 100%; /* Full width */
-    padding: 15px 20px; /* Bigger touch targets */
+    display: block; /* Full block clickable */
+    padding: 15px 20px; /* Larger touch area */
     border-bottom: 1px solid #eee; /* Separate the items */
-    background: none; /* Remove any background styles */
-    color: #333; /* Dark color for text */
-}
-
-/* Hide the main menu by default */
-.main-menu {
-    display: none;
-}
-
-/* Submenu adjustments */
-.menu-item-dropdown {
-    position: relative; /* Establish positioning context */
+    color: #333; /* Text color */
+    background: none; /* No background */
 }
 
 .menu-item-dropdown .submenu {
-    display: none; /* Keep it hidden */
-    position: static; /* Normal document flow */
-    background: none; /* Remove special backgrounds */
-    box-shadow: none; /* No shadow for mobile submenu */
+    display: none; /* Keep submenu hidden by default */
+    width: 100%; /* Full width */
+    background-color: #f8f8f8; /* Slightly different background for submenus */
 }
 
 .menu-item-dropdown.active .submenu {
-    display: block; /* Show submenu when active */
-    padding-left: 20px; /* Indent submenu items for clarity */
+    display: block; /* Display submenu when active */
 }
 
-/* Style for menu items that are dropdown toggles */
 .menu-item-dropdown > a:after {
-    content: '\25BC'; /* Downward arrow */
-    font-size: 0.8em; /* Smaller arrow size */
-    margin-left: 10px; /* Space between text and arrow */
+    content: '\f063'; /* Downward arrow for dropdown indication */
+    float: right; /* Push arrow to the right */
+    margin-right: 10px; /* Right margin for the arrow */
 }
 
-/* Rotate arrow when submenu is active */
 .menu-item-dropdown.active > a:after {
-    content: '\25B2'; /* Upward arrow */
-}
-
-/* Adjust header for mobile view */
-header h1 {
-    font-size: 1.2rem; /* Smaller font size */
-    text-align: left; /* Align to the left */
-    padding-left: 60px; /* Make room for the menu icon */
-    margin: 0; /* Remove any default margin */
+    content: '\f062'; /* Upward arrow when submenu is active */
 }
