@@ -91,6 +91,30 @@ nav ul li a {
     z-index: 100;
 }
 
+* Logo link style */
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation link style */
+.nav-link {
+    display: inline-block;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover, .nav-link:focus {
+    background-color: #444; /* Slightly lighter background for hover */
+    color: #fff;
+}
+
+/* FontAwesome Hamburger */
+.hamburger i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
 /* Responsive design adjustments */
 @media (max-width: 768px) {
     /* Stack header content */

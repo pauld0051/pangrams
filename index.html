@@ -9,34 +9,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script src="scripts/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <!-- Add any additional meta tags and scripts here -->
 </head>
 <body>
     <header>
         <div class="header-content">
-            <a href="index.html">
+            <a href="index.html" class="logo-link">
                 <img src="images/pangram-checker-logo-32.png" alt="Pangram Checker Logo" id="logo">
             </a>
             <h1>Pangram World</h1>
-            <!-- Hamburger menu icon -->
-            <div class="hamburger">☰</div> <!-- This is the missing hamburger icon -->
-            <nav class="header-content">
+            <div class="hamburger"><i class="fas fa-bars"></i></div> <!-- FontAwesome icon -->
+            <nav>
                 <ul>
-                    <li><a href="book">The Pangram Book</a></li>
+                    <li><a href="book" class="nav-link">The Pangram Book</a></li>
                     <li class="dropdown">
-                        <a href="alternate_text">Alternate your text</a>
+                        <a href="alternate_text" class="nav-link">Alternate your text</a>
                         <!-- Dropdown menu content -->
                         <ul class="dropdown-content">
                             <li><a href="bold_text">Bold your text</a></li>
                             <li><a href="italics_text">Italicize your text</a></li>
                         </ul>
-                    </li> <!-- This is the missing closing tag -->
+                    </li>
                 </ul>
             </nav>
         </div>
-    </header>    
-
+    </header>  
     <!-- Main content area where your page content will go -->
     <main>
         <h2>Check Your Phrase</h2>
