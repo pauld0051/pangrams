@@ -26,37 +26,40 @@ const italicMap = {
         'ú': '𝘶́', 'û': '𝘶̂', 'ü': '𝘶̈', 'ý': '𝘺́', 'þ': '𝘵̵', 'ÿ': '𝘺̈'
       };
       
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('alternatingTextForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        let inputText = document.getElementById('textInput').value;
-        let italicText = '';
-
-        // Convert each character to its italic equivalent
-        for (let char of inputText) {
-            italicText += italicMap[char] || char; // Fallback to the original character if no italic equivalent
+      document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('alternatingTextForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+    
+            let inputText = document.getElementById('textInput').value;
+            let italicText = '';
+    
+            // Convert each character to its italic equivalent
+            for (let char of inputText) {
+                italicText += italicMap[char] || char; // Fallback to the original character if no italic equivalent
+            }
+    
+            // Set the italic text as the value of the output element
+            const outputElement = document.getElementById('alternatingTextOutput');
+            outputElement.textContent = italicText; // Use textContent to set text
+            outputElement.style.height = ""; // Reset the height
+            outputElement.style.height = outputElement.scrollHeight + "px"; // Adjust the height to fit content
+        });
+    
+        // Function to copy text to clipboard
+        function copyToClipboard(text) {
+            const dummy = document.createElement('textarea');
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
         }
-
-        // Set the italic text as the value of the output element
-        const outputElement = document.getElementById('alternatingTextOutput');
-        outputElement.textContent = italicText; // Use textContent to set text
+    
+        // Event listener for the copy button
+        document.getElementById('copyButton').addEventListener('click', function () {
+            // Copy the value, which will retain italic formatting when pasted
+            const textToCopy = document.getElementById('alternatingTextOutput').textContent;
+            copyToClipboard(textToCopy);
+        });
     });
-
-    // Function to copy text to clipboard
-    function copyToClipboard(text) {
-        const dummy = document.createElement('textarea');
-        document.body.appendChild(dummy);
-        dummy.value = text;
-        dummy.select();
-        document.execCommand('copy');
-        document.body.removeChild(dummy);
-    }
-
-    // Event listener for the copy button
-    document.getElementById('copyButton').addEventListener('click', function () {
-        // Copy the value, which will retain italic formatting when pasted
-        const textToCopy = document.getElementById('alternatingTextOutput').textContent;
-        copyToClipboard(textToCopy);
-    });
-});
+    
