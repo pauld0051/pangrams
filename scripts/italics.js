@@ -64,7 +64,7 @@ const italicMap = {
             // Set a timeout to revert the button text back to "Copy Text" after 2 seconds
             setTimeout(function () {
                 copyButton.textContent = 'Copy Text';
-            }, 2000);
+            }, 5000);
         });
     
         // Event listener to revert the copy button text when the input is changed

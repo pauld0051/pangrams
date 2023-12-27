@@ -38,6 +38,7 @@ const boldMap = {
 
   };
   
+  
   document.getElementById('alternatingTextForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -51,25 +52,36 @@ const boldMap = {
 
     // Set the bold text as the value of the output element
     const outputElement = document.getElementById('alternatingTextOutput');
-    outputElement.value = boldText; // Use value to set text for textarea
+    outputElement.textContent = boldText; // Use textContent to set text
     outputElement.style.height = ''; // Reset the height
     outputElement.style.height = outputElement.scrollHeight + 'px'; // Adjust the height to fit content
 });
 
-// Function to copy text to clipboard
-function copyToClipboard(text) {
+// Function to copy text to clipboard and change button text
+document.getElementById('copyButton').addEventListener('click', function () {
+    const textToCopy = document.getElementById('alternatingTextOutput').textContent;
+    const copyButton = this; // 'this' refers to the button clicked
+
+    // Copy the text
     const dummy = document.createElement('textarea');
     document.body.appendChild(dummy);
-    dummy.value = text;
+    dummy.value = textToCopy;
     dummy.select();
     document.execCommand('copy');
     document.body.removeChild(dummy);
-}
 
-// Event listener for the copy button
-document.getElementById('copyButton').addEventListener('click', function () {
-    // Copy the value, which will retain bold formatting when pasted
-    const textToCopy = document.getElementById('alternatingTextOutput').value; // Use value for textarea
-    copyToClipboard(textToCopy);
+    // Change the button text to "Copied"
+    copyButton.textContent = 'Copied';
+
+    // Set a timeout to revert the button text back to "Copy Text" after 2 seconds
+    setTimeout(function () {
+        copyButton.textContent = 'Copy Text';
+    }, 5000);
+});
+
+// Event listener to revert the copy button text when the input is changed
+document.getElementById('textInput').addEventListener('input', function () {
+    const copyButton = document.getElementById('copyButton');
+    copyButton.textContent = 'Copy Text';
 });
 });
