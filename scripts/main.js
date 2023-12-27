@@ -1,27 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.createElement('div');
-    hamburger.classList.add('hamburger');
-    // Add the hamburger lines or icon here
-    hamburger.textContent = '☰'; // Simple text hamburger icon
-
-    const headerContent = document.querySelector('.header-content');
-    headerContent.insertBefore(hamburger, headerContent.childNodes[0]);
+    const hamburger = document.querySelector('.hamburger');
 
     hamburger.addEventListener('click', function () {
-        hamburger.classList.toggle('active');
-        const navUl = document.querySelector('nav ul');
-        navUl.style.display = hamburger.classList.contains('active') ? 'flex' : 'none';
+        // Toggle an 'active' class instead of directly changing the style
+        document.body.classList.toggle('menu-active');
     });
 
-    window.addEventListener('resize', function() {
-        const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        const navUl = document.querySelector('nav ul');
-        if (screenWidth > 768) {
-            navUl.style.display = 'none';
-            hamburger.classList.remove('active');
-        } else {
-            navUl.style.display = hamburger.classList.contains('active') ? 'flex' : 'none';
+    // If the user taps outside the menu, close the menu
+    document.addEventListener('click', function (event) {
+        if (!hamburger.contains(event.target) && !event.target.matches('.dropdown a')) {
+            document.body.classList.remove('menu-active');
         }
     });
-    
+});
+
+// Adjust menu visibility based on 'menu-active' class
+window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) {
+        // Reset any inline styles added by JavaScript
+        document.body.classList.remove('menu-active');
+    }
 });

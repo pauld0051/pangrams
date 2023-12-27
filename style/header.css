@@ -60,17 +60,17 @@ nav ul li a {
 
 /* Style the dropdown content */
 .dropdown-content {
-    display: none; /* Hide the dropdown content by default */
-    position: absolute; /* Position it absolutely in relation to the dropdown */
-    background-color: #f9f9f9; /* A light background for the dropdown */
-    min-width: 160px; /* Minimum width for the dropdown */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow for the dropdown */
-    z-index: 1; /* Ensure it's above other content */
+    display: block;
+    position: static; /* let it flow in the document */
+    background-color: transparent;
+    box-shadow: none;
+    margin-top: 5px;
 }
 
 /* Display the dropdown content on hover */
-.dropdown:hover .dropdown-content {
-    display: block; /* Show the dropdown content */
+.dropdown-content li a:hover {
+    background-color: #555; /* darker background on hover */
+    color: #fff; /* white text on hover */
 }
 
 /* Style the dropdown content links */
@@ -120,6 +120,13 @@ nav ul li a {
         display: block; /* Makes the links fill the li */
     }
 
+    /* Style adjustments for the dropdown to be full-width for easier access on mobile */
+    .dropdown-content {
+        box-shadow: none;
+        position: static; /* Let it flow in the document */
+        width: 100%; /* Full width */
+    }
+
     /* Hamburger menu displayed on the right side */
     .hamburger {
         display: block;
@@ -127,6 +134,8 @@ nav ul li a {
         right: 1rem;
         top: 1rem;
         z-index: 100; /* Make sure the hamburger is above other content */
+        font-size: 2rem; /* Larger icon for easy touch */
+        user-select: none; /* Prevent text selection on double click */
     }
 
     /* Show navigation menu when hamburger is active */
@@ -150,6 +159,24 @@ footer {
     margin-left: auto; /* Center align the footer */
     margin-right: auto; /* Center align the footer */
     position: relative; /* Or you can remove the position property if not needed */
+}
+
+/* Show dropdown menu when 'menu-active' class is added to the body */
+body.menu-active nav ul {
+    display: flex;
+}
+
+/* Hide dropdown content on larger screens */
+@media (min-width: 769px) {
+    .dropdown-content {
+        display: none;
+    }
+
+    /* Show dropdown content on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+        position: absolute;
+    }
 }
 
 
