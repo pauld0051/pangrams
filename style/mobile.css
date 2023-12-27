@@ -1,134 +1,48 @@
-/* Modernised menu toggle icon for mobile */
+/* mobile.css */
 .menu-toggle {
-    display: block;
-    font-size: 1.5rem;
-    cursor: pointer;
+    display: block; /* Show the menu toggle */
+    position: absolute;
+    right: 10px; /* Position it on the right */
+    top: 10px; /* Position it at the top */
+    font-size: 2rem; /* Increase size for better touch */
 }
 
-/* Show the main menu with a flex column on small screens */
 .main-menu.show {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the start */
-    width: 100%; /* Full width */
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 999;
 }
 
-/* Dropdown toggle link style */
-.dropdown-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Aligns the text and icon */
-}
-
-/* Hide the main menu by default, show when menu-toggle is clicked */
 .main-menu {
     display: none;
+    padding-top: 50px; /* Make room for closed toggle button */
 }
 
-/* Style when the menu is toggled open */
-.menu-open .main-menu {
-    display: block;
-}
-
-/* Submenu style */
-.submenu {
-    display: none;
-    position: static; /* Normal document flow on mobile */
-    width: calc(100% - 20px); /* Full width minus padding */
-    background-color: #444; /* Darker background for modern look */
-    border-radius: 4px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    margin-top: 0; /* No spacing above the submenu on mobile */
-}
-
-/* Submenu item style */
-.submenu li a {
-    padding: 10px 15px;
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    transition: background-color 0.3s ease; /* Smooth transition for hover */
-}
-
-.submenu li a:hover {
-    background-color: #555; /* Hover effect */
-}
-
-/* Style for when submenu is open */
-.menu-item-dropdown.active > a.menu-toggle:after {
-    content: '\f077'; /* FontAwesome up arrow */
-    font-family: 'FontAwesome';
-    padding-left: 5px;
-}
-
-/* Show submenu when its toggle is clicked */
-.menu-item-dropdown.active .submenu {
-    display: block;
-}
-
-/* Full-width title on small screens */
-header h1 {
-    width: 100%;
-    order: 0;
-    padding: 10px 0;
-}
-
-/* Hide navigation menu initially */
-nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    order: 3;
-}
-
-/* Full-width links with larger click area */
-nav ul li {
-    text-align: left;
-    width: 100%;
-}
-
-nav ul li a {
-    padding: 10px 15px;
-}
-
-/* Hamburger menu visible */
-.menu-toggle {
-    display: block;
-    margin-left: auto; /* Align to the right of the header */
-    user-select: none;
-}
-
-/* Footer padding adjustment */
-footer {
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-/* Ensure the hamburger menu is visible on mobile */
-.menu-toggle {
-    display: block;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-/* Hide the main menu by default, show when menu-toggle is clicked */
-.main-menu {
-    display: none;
-    flex-direction: column;
-}
-
-/* Show the menu when it's toggled */
-.main-menu.show {
-    display: flex;
-}
-
-/* Style the dropdown for mobile */
+/* Style adjustments for submenu */
 .menu-item-dropdown .submenu {
-    display: none; /* Hide the submenu */
-    background-color: #444; /* Submenu background color */
-    width: 100%;
+    display: none; /* Keep it hidden */
+    width: 100%; /* Full width */
+    box-shadow: none; /* No shadow for mobile submenu */
 }
 
 .menu-item-dropdown.active .submenu {
-    display: block; /* Show the submenu when active */
+    display: block; /* Show submenu when active */
+}
+
+/* Adjust the styles for mobile navigation links */
+nav ul li a {
+    padding: 15px 20px; /* Bigger touch targets */
+    border-bottom: 1px solid #eee; /* Separate the items */
+}
+
+/* Adjust header for mobile view */
+header h1 {
+    font-size: 1.2rem; /* Smaller font size */
+    text-align: left; /* Align to the left */
+    padding-left: 60px; /* Make room for the menu icon */
 }

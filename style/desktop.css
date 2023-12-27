@@ -1,30 +1,73 @@
-/* Hide the hamburger menu on desktop */
-.menu-toggle {
-    display: none;
+/* desktop.css */
+header {
+    background-color: #fff; /* Change to white or any light shade for a modern look */
+    color: #333; /* Dark grey for text for better readability */
+    padding: 1rem 2rem; /* Adjust the padding to increase whitespace */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-/* Display the navigation menu as a row */
+.header-content {
+    max-width: 1200px; /* Constrain the width for larger screens */
+    margin: 0 auto; /* Center the header content */
+}
+
+#logo {
+    height: 40px; /* Adjust logo size for a cleaner look */
+}
+
+h1 {
+    font-size: 1.5rem; /* Adjust font size as needed */
+    color: #5E5E5E; /* Modern text color */
+}
+
 nav ul {
-    display: flex;
+    align-items: center;
+    padding-left: 0; /* Remove padding */
 }
 
-/* Style the dropdown for desktop */
-.menu-item-dropdown:hover .submenu,
-.menu-item-dropdown:focus-within .submenu {
-    display: block;
+nav ul li {
+    padding: 0 20px; /* Adjust spacing around navigation links */
+}
+
+nav ul li a {
+    color: #5E5E5E; /* Same as the title for consistency */
+    font-weight: bold; /* Optional: makes it stand out */
+}
+
+/* Hover effect for links */
+.nav-link:hover, .nav-link:focus {
+    color: #000; /* Slightly darker on hover/focus */
+    background-color: transparent; /* Remove any background color */
+}
+
+/* Submenu */
+.submenu {
+    display: none;
     position: absolute;
-    background-color: #333;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 1000;
 }
 
-.menu-item-dropdown:hover .submenu a,
-.menu-item-dropdown:focus-within .submenu a {
-    color: #fff;
+/* Submenu links */
+.submenu li a {
+    color: #333;
+    padding: 10px 20px; /* More padding for touch targets */
+    display: block;
 }
 
-.menu-item-dropdown:hover .dropdown-toggle i,
-.menu-item-dropdown:focus-within .dropdown-toggle i {
-    transform: rotate(180deg);
+/* Show Submenu on hover */
+.menu-item-dropdown:hover .submenu {
+    display: block;
+}
+
+/* Responsive design for desktop.css */
+@media (max-width: 1024px) {
+    .header-content {
+        padding: 1rem;
+    }
+    nav ul li {
+        padding: 0 15px;
+    }
 }
