@@ -51,12 +51,9 @@ const boldMap = {
 
     // Set the bold text as the value of the output element
     const outputElement = document.getElementById('alternatingTextOutput');
-    outputElement.textContent = boldText; // Use textContent to set text
-    // Adjust the height to fit content if outputElement is a textarea
-    if (outputElement instanceof HTMLTextAreaElement) {
-        outputElement.style.height = ''; // Reset the height
-        outputElement.style.height = outputElement.scrollHeight + 'px';
-    }
+    outputElement.value = boldText; // Use value to set text for textarea
+    outputElement.style.height = ''; // Reset the height
+    outputElement.style.height = outputElement.scrollHeight + 'px'; // Adjust the height to fit content
 });
 
 // Function to copy text to clipboard
@@ -72,7 +69,7 @@ function copyToClipboard(text) {
 // Event listener for the copy button
 document.getElementById('copyButton').addEventListener('click', function () {
     // Copy the value, which will retain bold formatting when pasted
-    const textToCopy = document.getElementById('alternatingTextOutput').textContent;
+    const textToCopy = document.getElementById('alternatingTextOutput').value; // Use value for textarea
     copyToClipboard(textToCopy);
 });
 });
