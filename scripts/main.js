@@ -1,34 +1,40 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const mainMenuToggle = document.querySelector('.header-content > .menu-toggle');
-    const dropdownToggle = document.querySelector('.menu-item-dropdown > a');
+    const menuToggle = document.querySelector('.menu-toggle');
     const mainMenu = document.querySelector('.main-menu');
-    const submenu = document.querySelector('.submenu');
 
     // Toggle main menu
-    mainMenuToggle.addEventListener('click', function () {
+    menuToggle.addEventListener('click', function () {
         mainMenu.classList.toggle('show');
     });
 
-    // Toggle submenu on mobile
-    dropdownToggle.addEventListener('click', function (event) {
-        // Prevent default link behaviour only on mobile
-        if (window.innerWidth <= 768) {
-            event.preventDefault();
-            submenu.classList.toggle('show');
-        }
+    // Add event listeners to all dropdown toggles
+    document.querySelectorAll('.menu-item-dropdown').forEach(function (dropdown) {
+        const toggle = dropdown.querySelector('a');
+        const submenu = dropdown.querySelector('.submenu');
+
+        toggle.addEventListener('click', function (event) {
+            if (window.innerWidth <= 768) {
+                event.preventDefault(); // Prevent the default anchor behavior
+                submenu.classList.toggle('show'); // Toggle the `.show` class on the submenu
+            }
+        });
     });
 
     // Close the submenu if clicking outside of it
     window.addEventListener('click', function (event) {
         if (!event.target.matches('.menu-item-dropdown > a') && !event.target.closest('.submenu')) {
-            submenu.classList.remove('show');
+            document.querySelectorAll('.submenu').forEach(function (submenu) {
+                submenu.classList.remove('show');
+            });
         }
     });
 
     // Close dropdown when resizing to wider screens
     window.addEventListener('resize', function () {
         if (window.innerWidth > 768) {
-            submenu.classList.remove('show');
+            document.querySelectorAll('.submenu').forEach(function (submenu) {
+                submenu.classList.remove('show');
+            });
         }
     });
 });
