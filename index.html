@@ -29,7 +29,8 @@
                 <ul class="main-menu">
                     <li><a href="book.html" class="nav-link">The Pangram Book</a></li>
                     <li class="menu-item-dropdown">
-                        <a href="javascript:void(0);" class="nav-link dropdown-toggle">More <i class="fas fa-chevron-down"></i></a>
+                        <a href="javascript:void(0);" class="nav-link dropdown-toggle">More <i
+                                class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
                             <li><a href="alternate_text.html">Alternate</a></li>
                             <li><a href="bold_text.html">Bold</a></li>
@@ -40,11 +41,17 @@
             </nav>
         </div>
     </header>
+
     <!-- Main content area where your page content will go -->
+    <main>
     <div class="card-container">
         <a href="index.html" class="card" id="homeCard">
-        <i class="fas fa-home fa-3x"></i>
-        <h3>Home</h3>
+            <i class="fas fa-home fa-3x"></i>
+            <h3>Home</h3>
+        </a>
+        <a href="book.html" class="card" id="bookCard">
+            <i class="fas fa-book fa-3x"></i>
+            <h3>Book</h3>
         </a>
         <a href="alternate_text.html" class="card" id="alternateTextCard">
             <i class="fas fa-sync-alt fa-3x"></i>
@@ -59,11 +66,12 @@
             <h3>Italic Text Generator</h3>
         </a>
     </div>
-</main>
-
+    </main>
 
     <footer>
-        <p>&copy; <script>document.write(new Date().getFullYear());</script> Paul Davis. All Rights Reserved.</p>
+        <p>&copy;
+            <script>document.write(new Date().getFullYear());</script> Paul Davis. All Rights Reserved.
+        </p>
         <!-- Add additional footer content such as links or contact information here -->
     </footer>
     <script src="scripts/pangrams.js"></script>

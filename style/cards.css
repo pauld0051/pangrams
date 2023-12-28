@@ -8,18 +8,20 @@
 
 /* Card styling */
 .card {
-    background: #ffffff; /* Light mode */
-    border: 1px solid #eaeaea; /* Slight border */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    background: #f8f9fa; /* Light grey background */
+    border: 1px solid #e0e0e0; /* Slightly darker border for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12); /* Soft shadow */
     border-radius: 10px; /* Rounded corners */
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s; /* Smooth background color transition on hover */
 }
 
 .card:hover {
+    background-color: #ffffff; /* White background on hover for contrast */
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card i {

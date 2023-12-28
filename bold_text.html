@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bold Text Generator</title>
-        <link rel="stylesheet" href="style/styles.css">
-        <link rel="stylesheet" href="style/base.css">
-        <link rel="stylesheet" href="style/logos.css">
-        <link rel="stylesheet" href="style/footer.css">
-        <link rel="stylesheet" href="style/desktop.css" media="screen and (min-width: 769px)">
-        <link rel="stylesheet" href="style/mobile.css" media="screen and (max-width: 768px)">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-        <script src="scripts/main.js" defer></script>
-        <script src="https://kit.fontawesome.com/18fe617275.js" crossorigin="anonymous"></script>
-    
-        <!-- Add any additional meta tags and scripts here -->
-    </head>
-    <body>
-       <header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bold Text Generator</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/logos.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/desktop.css" media="screen and (min-width: 769px)">
+    <link rel="stylesheet" href="style/mobile.css" media="screen and (max-width: 768px)">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="scripts/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/18fe617275.js" crossorigin="anonymous"></script>
+
+    <!-- Add any additional meta tags and scripts here -->
+</head>
+<body>
+    <header>
         <div class="header-content">
             <a href="index.html" class="logo-link">
                 <img src="images/pangram-checker-logo-32.png" alt="Pangram Checker Logo" id="logo">
@@ -29,7 +29,8 @@
                 <ul class="main-menu">
                     <li><a href="book.html" class="nav-link">The Pangram Book</a></li>
                     <li class="menu-item-dropdown">
-                        <a href="javascript:void(0);" class="nav-link dropdown-toggle">More <i class="fas fa-chevron-down"></i></a>
+                        <a href="javascript:void(0);" class="nav-link dropdown-toggle">More <i
+                                class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
                             <li><a href="alternate_text.html">Alternate</a></li>
                             <li><a href="bold_text.html">Bold</a></li>
@@ -40,23 +41,26 @@
             </nav>
         </div>
     </header>
-    
- <!-- Main content area where your page content will go -->
- <main>
-    <h2>Bold Text Maker</h2>
-    <p>Suitable to copy and paste into <i class="fab fa-facebook facebook-icon" font-size: 1em; vertical-align: middle; margin-left: 0.5em;"></i></p>
-    <form id="alternatingTextForm">
-        <input type="text" id="textInput" placeholder="Enter your text here" required>
-        <button type="submit" class="transform-btn">Transform</button>
-    </form>
-    <!-- Output textbox -->
-    <textarea id="alternatingTextOutput" placeholder="Your bold text will appear here" readonly></textarea>
-    <!-- Copy button -->
-    <button id="copyButton" type="button" class="copy-btn">Copy Text</button>
-</main>
+
+    <!-- Main content area where your page content will go -->
+    <main>
+        <h2>Bold Text Maker</h2>
+        <p>Suitable to copy and paste into <i class="fab fa-facebook facebook-icon" font-size: 1em; vertical-align:
+                middle; margin-left: 0.5em;"></i></p>
+        <form id="alternatingTextForm">
+            <input type="text" id="textInput" placeholder="Enter your text here" required>
+            <button type="submit" class="transform-btn">Transform</button>
+        </form>
+        <!-- Output textbox -->
+        <textarea id="alternatingTextOutput" placeholder="Your bold text will appear here" readonly></textarea>
+        <!-- Copy button -->
+        <button id="copyButton" type="button" class="copy-btn">Copy Text</button>
+    </main>
 
     <footer>
-        <p>&copy; <script>document.write(new Date().getFullYear());</script> Paul Davis. All Rights Reserved.</p>
+        <p>&copy;
+            <script>document.write(new Date().getFullYear());</script> Paul Davis. All Rights Reserved.
+        </p>
         <!-- Add additional footer content such as links or contact information here -->
     </footer>
 
