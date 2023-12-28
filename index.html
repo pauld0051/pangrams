@@ -6,6 +6,8 @@
     <title>Pangram World</title>
     <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/cards.css">
+    <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/desktop.css" media="screen and (min-width: 769px)">
     <link rel="stylesheet" href="style/mobile.css" media="screen and (max-width: 768px)">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -39,14 +41,26 @@
         </div>
     </header>
     <!-- Main content area where your page content will go -->
-    <main>
-        <h2>Check Your Phrase</h2>
-        <form id="pangramForm">
-            <input type="text" id="phraseInput" placeholder="Enter your phrase here" required>
-            <button type="submit" class="transform-btn">Check</button>
-        </form>
-        <div id="result"></div>
-    </main>
+    <div class="card-container">
+        <a href="index.html" class="card" id="homeCard">
+        <i class="fas fa-home fa-3x"></i>
+        <h3>Home</h3>
+        </a>
+        <a href="alternate_text.html" class="card" id="alternateTextCard">
+            <i class="fas fa-sync-alt fa-3x"></i>
+            <h3>Alternate Text Generator</h3>
+        </a>
+        <a href="bold_text.html" class="card" id="boldTextCard">
+            <i class="fas fa-bold fa-3x"></i>
+            <h3>Bold Text Generator</h3>
+        </a>
+        <a href="italics_text.html" class="card" id="italicTextCard">
+            <i class="fas fa-italic fa-3x"></i>
+            <h3>Italic Text Generator</h3>
+        </a>
+    </div>
+</main>
+
 
     <footer>
         <p>&copy; <script>document.write(new Date().getFullYear());</script> Paul Davis. All Rights Reserved.</p>

@@ -37,4 +37,13 @@ document.addEventListener('DOMContentLoaded', function () {
             mainMenu.classList.remove('show');
         }
     });
+
+    // Check year and adjust as needed
+    const year = new Date().getFullYear();
+        const copyrightElement = document.querySelector('footer .copyright');
+        if (copyrightElement) {
+            copyrightElement.textContent = `© ${year} Paul Davis. All Rights Reserved.`;
+        }
 });
+
+

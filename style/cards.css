@@ -1,0 +1,37 @@
+/* Card container */
+.card-container  {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card styling */
+.card {
+    background: #ffffff; /* Light mode */
+    border: 1px solid #eaeaea; /* Slight border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card i {
+    color: #2c3e50; /* Icon color */
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+
+/* Add any additional styling you like for the rest of your elements */
