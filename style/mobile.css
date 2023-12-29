@@ -139,3 +139,10 @@ main {
 .submenu li a {
     color: #333; /* Dark grey text color for visibility on a white background */
 }
+
+.home-icon {
+    position: fixed; /* Use fixed instead of absolute to keep it in view */
+    top: 25px; /* Adjust based on your layout */
+    right: 80px !important; /* Add !important to ensure this rule is applied */
+    z-index: 1002; /* Make sure it's above the menu-toggle */
+}
