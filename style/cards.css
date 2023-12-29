@@ -35,5 +35,9 @@
     margin: 0;
 }
 
+.card {
+    text-decoration: none !important;
+}
+
 
 /* Add any additional styling you like for the rest of your elements */

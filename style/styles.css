@@ -134,6 +134,17 @@ button:active {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.card-icon {
+    font-size: 3em;
+    font-weight: bold;
+    color: black;
+}
+
+/* Optional: Adjust the size of the circle if it's not proportional to the text */
+.fas.fa-circle.fa-3x {
+    font-size: 2em !important; /* Adjust as needed */
+}
+
 /* Responsive design adjustments for main content and form elements */
 @media (max-width: 768px) {
     /* Reduce padding inside the main content area */
