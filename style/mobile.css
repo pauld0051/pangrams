@@ -35,6 +35,7 @@ header .header-content .menu-toggle i {
     display: none; /* Hide by default */
     flex-direction: column; /* Stack items vertically */
     left: 0;
+    max-height: calc(100vh - 60px); /* Set maximum height to 100% of the viewport height minus the header height */
     overflow-y: auto; /* Allow scrolling within menu */
     padding-bottom: 1rem; /* Padding at the bottom */
     position: absolute; /* Positioned relative to the nearest positioned ancestor */
