@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     navigator.clipboard.writeText(outputElement1.textContent).then(() => {
       copyButton1.textContent = 'Copied!';
       setTimeout(() => {
-        copyButton1.textContent = 'Copy Squared Negative Text';
+        copyButton1.textContent = 'Copy Negative Square Text';
       }, 5000);
     }).catch(err => {
       console.error('Error copying text: ', err);

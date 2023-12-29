@@ -16,9 +16,28 @@ header {
 header h1 {
     color: #333; /* Text color */
     flex-grow: 1; /* Allows the title to grow and use available space */
-    font-size: 1.2rem; /* Reduce font size for mobile */
+    font-size: 4vw; /* Reduce the size on mobile */
     margin: 0; /* Remove margin to prevent misalignment */
     text-align: center; /* Center the title text */
+    flex-grow: 0; /* Do not allow the title to grow */
+    flex-shrink: 1; /* Allow the title to shrink if necessary */
+    flex-basis: auto; /* Base width auto */
+    }
+
+/* mobile.css */
+@media (max-width: 480px) { /* Adjust breakpoint as needed */
+    header h1 {
+        font-size: 4vw;
+    }
+    #logo {
+        margin-right: 5px;
+    }
+    .nav-link, .menu-toggle i {
+        padding: 5px;
+    }
+    header h1 {
+        flex-grow: 0;
+    }
 }
 
 header .header-content .menu-toggle i {
@@ -27,7 +46,7 @@ header .header-content .menu-toggle i {
 
 #logo {
     height: 40px; /* Adjust logo size for a cleaner look */
-    margin-right: 10px; /* Add some space between logo and title */
+    margin-right: 5px; /* Add some space between logo and title */
 }
 
 .main-menu {
@@ -37,6 +56,7 @@ header .header-content .menu-toggle i {
     left: 0;
     max-height: calc(100vh - 60px); /* Set maximum height to 100% of the viewport height minus the header height */
     overflow-y: auto; /* Allow scrolling within menu */
+    -webkit-overflow-scrolling: touch; /* Add this line for iOS devices */
     padding-bottom: 1rem; /* Padding at the bottom */
     position: absolute; /* Positioned relative to the nearest positioned ancestor */
     top: 60px; /* Below the header */
@@ -129,7 +149,6 @@ nav ul li a {
     color: #333; /* Text color */
     display: block; /* Full block clickable */
     padding: 15px 20px; /* Larger touch area */
-    border-bottom: 1px solid #eee; /* Separate the items */
 }
 
 /* Buffer between header and main */

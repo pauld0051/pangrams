@@ -93,6 +93,13 @@ nav ul li a {
     background-color: #ddd; /* Light grey background on hover */
 }
 
+.menu-divider {
+    height: 1px; /* The thickness of the divider line */
+    margin: 5px 0; /* Space above and below the divider */
+    overflow: hidden; /* In case of any overflow */
+    background-color: #e5e5e5; /* The color of the divider line */
+}
+
 /* Logo link style */
 .logo-link {
     display: flex;

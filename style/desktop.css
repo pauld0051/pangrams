@@ -15,6 +15,13 @@ header {
     height: 40px; /* Adjust logo size for a cleaner look */
 }
 
+header h1 {
+    font-size: 4.5vw; /* or use em, % */
+    white-space: nowrap; /* Keep the header text on a single line */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add an ellipsis to indicate text has been cut off */
+}
+
 h1 {
     font-size: 1.5rem; /* Adjust font size as needed */
     color: #5E5E5E; /* Modern text color */
