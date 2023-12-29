@@ -9,13 +9,14 @@
     <meta property="og:image"
         content="https://github.com/pauld0051/pangrams/blob/main/images/pangram-logo-192.png?raw=true" />
     <meta property="og:url" content="https://pauld0051.github.io/pangrams/" />
-    <title>Gothic Text Generator</title>
+    <title>Mathematical Symbols</title>
     <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="style/logos.css">
     <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/desktop.css" media="screen and (min-width: 769px)">
     <link rel="stylesheet" href="style/mobile.css" media="screen and (max-width: 768px)">
+    <link rel="stylesheet" href="style/symbols.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script src="scripts/main.js" defer></script>
@@ -29,7 +30,7 @@
             <a href="index.html" class="logo-link">
                 <img src="images/pangram-checker-logo-32.png" alt="Pangram Checker Logo" id="logo">
             </a>
-            <h1>Gothic Text Generator</h1>
+            <h1>Mathematical Symbols</h1>
             <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a> <!-- Home Icon -->
             <div class="menu-toggle"><i class="fas fa-bars"></i></div> <!-- Changed to bars icon for menu toggle -->
             <nav>
@@ -72,21 +73,126 @@
 
     <!-- Main content area where your page content will go -->
     <main>
-        <h2>Gothic Text Generator</h2>
-        <p>Suitable to copy and paste into <i class="fab fa-facebook facebook-icon" font-size: 1em; vertical-align:
-                middle; margin-left: 0.5em;"></i></p>
-        <form id="alternatingTextForm">
-            <input type="text" id="textInput" placeholder="Enter your text here" required>
-            <button type="submit" class="transform-btn">Transform</button>
-        </form>
-        <!-- Output textbox -->
-        <textarea id="alternatingTextOutput" placeholder="Your Gothic text will appear here" readonly></textarea>
-        <!-- Copy button -->
-        <button id="copyButton" type="button" class="copy-btn">Copy Text</button>
-        <h3>Bold Gothic</h3>
-        <textarea id="alternatingTextOutput1" placeholder="Your bold Gothic text will appear here" readonly></textarea>
-        <!-- New Copy button for Bold Gothic -->
-        <button id="copyBoldButton" type="button" class="copy-btn">Copy Bold Text</button>
+        <h2>Copy Symbols</h2>
+        <p>Suitable to copy and paste into <i class="fab fa-facebook facebook-icon"></i></p>
+        <small>Simply click the button of the symbol you want copied and it copies automatically then paste into your
+            favourite social media platform.</small>
+
+        <!-- Mathematical Symbols -->
+        <h3>Mathematical Symbols</h3>
+        <section class="symbols-grid">
+            <!-- Degrees -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="°">°</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Degrees</label>
+            </div>
+
+            <!-- Celsius -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="°C">°C</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Celsius</label>
+            </div>
+
+            <!-- Fahrenheit -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="°F">°F</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Fahrenheit</label>
+            </div>
+
+            <!-- Plus or minus -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="±">±</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Plus or Minus</label>
+            </div>
+
+            <!-- Not equal -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="≠">≠</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Not Equal</label>
+            </div>
+
+            <!-- Multiplication -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="×">×</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Multiplication</label>
+            </div>
+
+            <!-- Division -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="÷">÷</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Division</label>
+            </div>
+
+            <!-- Dot operator -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="∙">∙</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Dot Operator</label>
+            </div>
+
+            <!-- Per mille -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="‰">‰</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Per Mille</label>
+            </div>
+
+            <!-- Direct sum -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="⊕">⊕</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Direct Sum</label>
+            </div>
+
+            <!-- Implies -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="⇒">⇒</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Implies</label>
+            </div>
+
+            <!-- Equivalent -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="⇔">⇔</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Equivalent</label>
+            </div>
+
+            <!-- Therefore -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="∴">∴</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Therefore</label>
+            </div>
+
+            <!-- Because -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="∵">∵</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Because</label>
+            </div>
+
+            <!-- Less than or equal to -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="≤">≤</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Less Than or Equal To</label>
+            </div>
+
+            <!-- Greater than or equal to -->
+            <div class="symbol-container">
+                <button class="symbol-btn" data-symbol="≥">≥</button>
+                <div class="copied-overlay">Copied!</div>
+                <label>Greater Than or Equal To</label>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -96,6 +202,6 @@
         <!-- Add additional footer content such as links or contact information here -->
     </footer>
     <script src="scripts/toUnicodeVariant.js"></script>
-    <script src="scripts/gothic.js"></script>
+    <script src="scripts/symbols.js"></script>
 </body>
 </html>

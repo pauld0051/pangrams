@@ -158,6 +158,27 @@ main {
 
 .submenu li a {
     color: #333; /* Dark grey text color for visibility on a white background */
+    padding: 15px; /* Increase padding for larger touch targets */
+   
+}
+
+/* This will style the scrollbar track */
+.submenu::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Your preferred track color */
+    /* Add border or box-shadow if you want to create a padding-like effect */
+}
+
+/* This will style the scrollbar thumb */
+.submenu::-webkit-scrollbar-thumb {
+    background-color: #888; /* Your preferred thumb color */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 3px solid #f1f1f1; /* Border color should match the track color to create a padding effect */
+}
+
+/* This is your container that contains the scrollable content */
+.submenu {
+    padding-right: 10px; /* Add padding to the right to ensure space for the scrollbar */
+    box-sizing: content-box; /* This ensures that the padding is added to the width */
 }
 
 .home-icon {

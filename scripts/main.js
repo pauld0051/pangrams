@@ -45,5 +45,3 @@ document.addEventListener('DOMContentLoaded', function () {
             copyrightElement.textContent = `© ${year} Paul Davis. All Rights Reserved.`;
         }
 });
-
-

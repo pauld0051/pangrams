@@ -1,0 +1,73 @@
+/* Style for the symbol buttons to match the site's theme */
+.symbol-btn {
+    background-color: #17a2b8; /* Teal background */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    color: #ffffff; /* White text */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center symbol vertically */
+    justify-content: center; /* Center symbol horizontally */
+    width: 60px; /* Fixed width */
+    height: 60px; /* Fixed height */
+    font-size: 24px; /* Adjust font size as needed */
+    margin: 0.5rem; /* Spacing around buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
+    transition: transform 0.1s ease-in-out, background-color 0.3s; /* Smooth transitions */
+    position: relative; /* Needed to position the copied-message span absolutely */
+}
+
+.symbol-container label {
+    display: block; /* Ensure the label takes up the full width below the button */
+    margin-top: 5px; /* Space between the button and label text */
+    text-align: center; /* Center align the label text */
+}
+
+.symbol-btn:hover {
+    background-color: #159aab; /* Slightly darker shade on hover */
+    opacity: 1; /* Full opacity on hover */
+}
+
+.symbol-btn:active {
+    transform: scale(0.98); /* Slightly shrink the button when clicked */
+}
+
+.symbol-container {
+    position: relative; /* This will contain the absolute overlay */
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px; /* Provide some spacing around the symbol container */
+}
+
+/* Adjustments for the symbols grid container */
+.symbols-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* Center buttons in the grid */
+}
+
+.copied-overlay {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    background-color: #17a2b8;
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 10px;
+    z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .symbol-btn {
+        width: 50px; /* Smaller width for smaller screens */
+        height: 50px; /* Smaller height for smaller screens */
+        font-size: 20px; /* Smaller font size for smaller screens */
+    }
+}
