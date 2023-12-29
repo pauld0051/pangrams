@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     outputElement.textContent = '';
     outputElement1.textContent = '';
     // Reset button texts
-    copyButton.textContent = 'Copy Text';
-    copyButton1.textContent = 'Copy Squared Negative Text';
+    copyButton.textContent = 'Copy Square Text';
+    copyButton1.textContent = 'Copy Negative Square Text';
   });
 });
