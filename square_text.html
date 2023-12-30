@@ -5,73 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Pangram World" />
     <meta property="og:description"
-        content="Check if you have a pangram or adjust your text to bold, italic or even alternating caps/lower case for Facebook and other social media platforms." />
-    <meta property="og:image"
-        content="https://github.com/pauld0051/pangrams/blob/main/images/pangram-logo-192.png?raw=true" />
-    <meta property="og:url" content="https://pauld0051.github.io/pangrams/" />
+        content="Check if you have a pangram, add symbols or adjust your text to bold, italic, or even alternating caps/lower case for Facebook and other social media platforms. Additionally, enrich your science and math emails with a variety of mathematical symbols and Greek letters." />
+    <meta property="og:image" content="https://www.pangram-world.com/images/pangram-logo-192.png" />
+    <meta property="og:url" content="https://www.pangram-world.com" />
     <title>Square Text Generator</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="style/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="style/base.css">
-    <link rel="stylesheet" href="style/logos.css">
-    <link rel="stylesheet" href="style/footer.css">
-    <link rel="stylesheet" href="style/desktop.css" media="screen and (min-width: 769px)">
-    <link rel="stylesheet" href="style/mobile.css" media="screen and (max-width: 768px)">
+    <link rel="stylesheet" href="style/cards.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script src="scripts/main.js" defer></script>
+    <script src="scripts/bootstrap.bundle.js"></script>
     <script src="https://kit.fontawesome.com/18fe617275.js" crossorigin="anonymous"></script>
-
+    
     <!-- Add any additional meta tags and scripts here -->
-</head>
-<body>
-    <header>
-        <div class="header-content">
-            <a href="index.html" class="logo-link">
-                <img src="images/pangram-checker-logo-32.png" alt="Pangram Checker Logo" id="logo">
-            </a>
-            <h1>Square Text Generator</h1>
-            <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a> <!-- Home Icon -->
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div> <!-- Changed to bars icon for menu toggle -->
-            <nav>
-                <ul class="main-menu">
-                    <li><a href="book.html" class="nav-link"><i class="fas fa-book red"></i> The Pangram Book</a></li>
-                    <li class="menu-item-dropdown">
-                        <a href="javascript:void(0);" class="nav-link dropdown-toggle">More <i
-                                class="fas fa-chevron-down"></i></a>
-                        <ul class="submenu">
-                            <div class="menu-divider"></div> <!-- Divider as a div -->
-                            <li><a href="alternate_text.html"><i class="fas fa-sync-alt"></i> Alternate</a></li>
-                            <li><a href="bold_text.html"><i class="fas fa-bold"></i> Bold</a></li>
-                            <li><a href="italics_text.html"><i class="fas fa-italic"></i> Italics</a></li>
-                            <div class="menu-divider"></div> <!-- Divider as a div -->
-                            <li><a href="book.html"><i class="fas fa-pencil-alt"></i> Pangram Checker</a></li>
-                            <div class="menu-divider"></div> <!-- Divider as a div -->
-                            <li><a href="bold_italics_text.html"><span class="icon-combination">
-                                        <i class="fas fa-bold"></i>
-                                        <i class="fas fa-italic" style="margin-left: -5px;"></i>
-                                    </span>Bold & Italics</a></li>
-                            <li><a href="gothic_text.html">𝔊 Gothic</a></li>
-                            <li><a href="bubble_text.html">Ⓑ Bubble</a></li>
-                            <li><a href="square_text.html">🅂 Square</a></li>
-                            <li><a href="parenthesis_text.html">⒫ Parenthesis</a></li>
-                            <li><a href="wide_text.html"><i class="fas fa-arrows-alt-h"></i> Wide</a></li>
-                            <li><a href="square_negative_text.html">🆂- Negative Square</a></li>
-                            <div class="menu-divider"></div> <!-- Divider as a div -->
-                            <li class="link-divider">Symbols</li>
-                            <div class="menu-divider"></div> <!-- Divider as a div -->
-                            <li><a href="symbols.html"><i class="fas fa-infinity"></i> All Symbols</a></li>
-                            <li><a href="symbols_mathematical.html"><i class="fas fa-not-equal"></i> Mathematical Symbols</a></li>
-                            <li><a href="symbols_greek_lc.html">α Lowercase Greek</a></li>
-                            <li><a href="symbols_greek_uc.html">Ω Uppercase Greek</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Main content area where your page content will go -->
-    <main>
+    </head>
+    <body>
+        <!-- Main content area where your page content will go -->
+        <header id="globalHeader"></header>
+        <main>
         <h2>Square Text Generator</h2>
         <p>Suitable to copy and paste into <i class="fab fa-facebook facebook-icon" font-size: 1em; vertical-align:
                 middle; margin-left: 0.5em;"></i></p>

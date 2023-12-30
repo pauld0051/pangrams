@@ -1,47 +1,20 @@
-// main.js
-document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainMenu = document.querySelector('.main-menu');
-    const menuLinks = document.querySelectorAll('nav ul li a:not(.dropdown-toggle)'); // Ignore dropdown toggles
 
-    menuToggle.addEventListener('click', function () {
-        mainMenu.classList.toggle('show');
-    });
-
-    // Close the menu when a non-dropdown link is clicked
-    menuLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            mainMenu.classList.remove('show');
+// Function to load and initialize header and footer
+function loadHeaderAndFooter() {
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('globalHeader').innerHTML = data;
+            initializeMenu(); // Initialize the menu after the header is loaded
         });
-    });
 
-    // Handle submenus for mobile
-    const dropdownToggles = document.querySelectorAll('.menu-item-dropdown > a');
-
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function (event) {
-            // Prevent navigation for dropdown toggles
-            event.preventDefault(); 
-            const parentListItem = this.parentElement;
-            parentListItem.classList.toggle('active'); // Toggle active class on parent li
-
-            // This is just toggling, no need to check for the 'submenu' class
-            const submenu = this.nextElementSibling;
-            submenu.classList.toggle('show'); // Toggle show class on submenu
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('globalFooter').innerHTML = data;
+            // Any footer-specific JavaScript can go here
         });
-    });
+}
 
-    // Close the menu if clicking outside of it
-    document.addEventListener('click', function (event) {
-        if (!event.target.matches('.menu-toggle, .menu-toggle *') && !event.target.closest('.main-menu')) {
-            mainMenu.classList.remove('show');
-        }
-    });
-
-    // Check year and adjust as needed
-    const year = new Date().getFullYear();
-        const copyrightElement = document.querySelector('footer .copyright');
-        if (copyrightElement) {
-            copyrightElement.textContent = `© ${year} Paul Davis. All Rights Reserved.`;
-        }
-});
+// Execute loadHeaderAndFooter once the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', loadHeaderAndFooter);

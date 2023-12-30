@@ -172,32 +172,3 @@ button:active {
 .red {
     color: red;
 }
-
-/* Add this to your styles.css */
-.submenu {
-    display: block; /* Make sure the submenu is always visible */
-    max-height: 85vh; /* Set a maximum height for your dropdown menu */
-    overflow-y: auto; /* Add scroll on the Y axis if content overflows */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
-    border-radius: 8px; /* Optional: add rounded corners to the submenu */
-    width: 100%;
-}
-
-/* Styles for scrollbar (optional for better aesthetics) */
-.submenu::-webkit-scrollbar {
-    width: 10px; /* Scrollbar width */
-}
-
-.submenu::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Scrollbar track color */
-}
-
-.submenu::-webkit-scrollbar-thumb {
-    background: #888; /* Scrollbar thumb color */
-}
-
-.submenu::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Scrollbar thumb hover color */
-}
-
-/* Ensure the .submenu is not display:none; on any media query or specific CSS rule */

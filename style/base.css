@@ -1,117 +1,25 @@
-/* Basic header styles */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem; /* Uniform padding */
+/* Buffer between header and main */
+main {
+    margin-top: 60px; /* Adjust to match header height */
 }
 
-/* Flex container for header content */
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-}
-
-/* Logo styles */
-#logo {
-    height: 50px;
-    margin: 0;
-    padding: 0;
+.round {
     border-radius: 50%;
 }
 
-/* Title styles */
-header h1 {
-    flex-grow: 1;
+footer {
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    margin: 0;
+    padding: 1rem 0;
+    position: relative; /* Changed from absolute to fixed */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 8; /* Ensure it's above other elements */
 }
 
-/* Navigation styles */
-nav ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    padding: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Navigation link style */
-.nav-link {
-    display: inline-block;
-    padding: 10px 15px;
-    transition: background-color 0.3s;
-}
-
-.nav-link:hover, .nav-link:focus {
-    background-color: #444; /* Slightly lighter background for hover */
-    color: #fff;
-}
-
-/* Dropdown link style */
-.dropdown {
-    position: relative;
-}
-
-/* Dropdown content style */
-.dropdown-content {
-    display: none; /* Hidden by default */
-    position: absolute; /* Positioned relative to .dropdown */
-    background-color: #f9f9f9; /* Light background */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Dropdown shadow */
-    min-width: 160px; /* Minimum width */
-    z-index: 1;
-}
-
-/* Dropdown link hover and focus styles */
-.dropdown a:hover, .dropdown a:focus {
-    background-color: #555; /* Darker background for the dropdown link */
-    color: #fff;
-}
-
-/* Dropdown content link styles */
-.dropdown-content li a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    background-color: #fff; /* White background for dropdown links */
-}
-
-/* Dropdown content link hover styles */
-.dropdown-content li a:hover {
-    background-color: #ddd; /* Light grey background on hover */
-}
-
-.menu-divider {
-    height: 1px; /* The thickness of the divider line */
-    margin: 5px 0; /* Space above and below the divider */
-    overflow: hidden; /* In case of any overflow */
-    background-color: #e5e5e5; /* The color of the divider line */
-}
-
-/* Logo link style */
-.logo-link {
-    display: flex;
-    align-items: center;
-}
-
-.link-divider {
-    color: black;
-}
-
-/* FontAwesome Hamburger */
-.menu-toggle i {
-    font-size: 1.5rem;
-    color: #fff;
+/* Add this to ensure that the content is not hidden behind the footer */
+body, main {
+    margin-bottom: 3rem; /* Adjust this value to the height of your footer */
 }
