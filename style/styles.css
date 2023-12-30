@@ -77,6 +77,8 @@ button:active {
     transform: scale(0.98); /* Slightly shrink the button when clicked */
 }
 
+
+
 /* Style the result display */
 #result {
     margin-top: 1rem;

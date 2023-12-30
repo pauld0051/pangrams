@@ -17,6 +17,14 @@
     position: relative; /* Needed to position the copied-message span absolutely */
 }
 
+.symbol-btn-small {
+    font-size: 1em; /* Adjust the size as needed */
+}
+
+.symbol-btn-micro {
+    font-size: 0.8em;
+}
+
 .symbol-container label {
     display: block; /* Ensure the label takes up the full width below the button */
     margin-top: 5px; /* Space between the button and label text */
