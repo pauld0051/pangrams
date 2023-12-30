@@ -25,6 +25,10 @@
     font-size: 0.8em;
 }
 
+.symbol-btn-nano {
+    font-size: 0.65em;
+}
+
 .symbol-container label {
     display: block; /* Ensure the label takes up the full width below the button */
     margin-top: 5px; /* Space between the button and label text */
