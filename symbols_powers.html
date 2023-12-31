@@ -27,24 +27,28 @@
     <!-- Main content area where your page content will go -->
     <header id="globalHeader"></header>
     <main>
-        <h2>Copy Symbols</h2>
-        <p>Suitable to copy and paste into <i class="fab fa-facebook facebook-icon"></i></p>
-        <small>Simply click the button of the symbol you want copied and it copies automatically then paste into your
-            favourite social media platform.</small>
+        <!-- Section for Copy Symbols -->
+        <div class="container my-3">
+            <h2>Copy Symbols</h2>
+            <p>Suitable to copy and paste into <i class="fab fa-facebook facebook-icon"></i></p>
+            <p>Simply click the button of the symbol you want copied and it copies automatically then paste into your favourite
+                social media platform.</p>
 
-<!-- Checkbox to add multiplication sign -->
-<div class="container my-3">
-    <div class="row justify-content-start">
-        <div class="col-auto">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="addMultiplicationSign">
-                <label class="form-check-label" for="addMultiplicationSign">
-                    Add "×" before "10ⁿ"
-                </label>
+            <!-- Row for the checkbox and help button -->
+            <div class="row align-items-center my-2">
+                <div class="col-md-auto">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="addMultiplicationSign">
+                        <label class="form-check-label" for="addMultiplicationSign">Add "×" before "10ⁿ"</label>
+                    </div>
+                </div>
+                <div class="col-md-auto">
+                    <button type="button" class="btn btn-info btn-sm red" data-bs-toggle="modal"
+                        data-bs-target="#multiplicationSignHelpModal">
+                        ?
+                    </button>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
 
 <section class="symbols-grid">
     <!-- x squared -->
@@ -423,7 +427,33 @@
             <label>10 to the -x</label>
         </div>
 </section>
-
+<!-- Help Modal for Adding Multiplication Sign -->
+<div class="modal fade" id="multiplicationSignHelpModal" tabindex="-1"
+    aria-labelledby="multiplicationSignHelpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="multiplicationSignHelpModalLabel">Multiplication Sign Guide</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>When dealing with scientific notation, a multiplication sign can be used to clarify the expression.
+                    For example:</p>
+                <ul>
+                    <li>Without multiplication sign: <strong>10³</strong> is "ten to the power of three".</li>
+                    <li>With multiplication sign: <strong>×10³</strong> emphasizes the operation "multiply by ten to the
+                        power of three".</li>
+                </ul>
+                <p>This is particularly useful in written or printed math expressions to prevent misinterpretation of
+                    the notation.</p>
+                <p>Select the checkbox to automatically add a "×" before "10ⁿ" in your expressions.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
     </main>
 
     <footer id="globalFooter"></footer>

@@ -18,3 +18,9 @@ function loadHeaderAndFooter() {
 
 // Execute loadHeaderAndFooter once the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', loadHeaderAndFooter);
+
+document.getElementById('alternatingTextForm').addEventListener('reset', function() {
+    document.getElementById('alternatingTextOutput').value = '';
+    document.getElementById('alternatingTextOutput1').value = '';
+});
+

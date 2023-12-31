@@ -53,6 +53,39 @@
     margin: 5px; /* Provide some spacing around the symbol container */
 }
 
+.symbol-btn-large {
+    padding: 20px; /* Larger padding to increase the size of the button */
+    min-width: 150px; /* Minimum width to accommodate larger content */
+    display: block; /* To use the full width available */
+    margin: 10px auto; /* Center the buttons with automatic margins */
+    text-align: center; /* Center the text inside the button */
+    font-size: 24px; /* Adjust font size to fit larger content */
+    line-height: 1.2; /* Adjust line height for better readability */
+    word-wrap: break-word; /* Allows the text to wrap into multiple lines if necessary */
+}
+
+.symbol-btn-ex {
+    padding: 20px; /* Larger padding to increase the size of the button */
+    min-width: 150px; /* Minimum width to accommodate larger content */
+    display: block; /* To use the full width available */
+    margin: 10px auto; /* Center the buttons with automatic margins */
+    text-align: center; /* Center the text inside the button */
+    font-size: 18px; /* Adjust font size to fit larger content */
+    line-height: 1.2; /* Adjust line height for better readability */
+    word-wrap: break-word; /* Allows the text to wrap into multiple lines if necessary */
+}
+
+.symbol-btn-ex2 {
+    padding: 20px; /* Larger padding to increase the size of the button */
+    min-width: 150px; /* Minimum width to accommodate larger content */
+    display: block; /* To use the full width available */
+    margin: 10px auto; /* Center the buttons with automatic margins */
+    text-align: center; /* Center the text inside the button */
+    font-size: 14px; /* Adjust font size to fit larger content */
+    line-height: 1.2; /* Adjust line height for better readability */
+    word-wrap: break-word; /* Allows the text to wrap into multiple lines if necessary */
+}
+
 /* Adjustments for the symbols grid container */
 .symbols-grid {
     display: flex;
