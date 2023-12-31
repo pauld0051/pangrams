@@ -88,28 +88,31 @@ button:active {
 }
 
 /* Style the form */
-#alternatingTextForm {
+#alternatingTextForm, #romanToArabicForm {
     margin-bottom: 1rem; /* Spacing below the form */
 }
 
-/* Style the input */
-#textInput {
+/* Consolidated input style */
+input[type="text"], input[type="number"], #textInput, #romanInput {
     width: 100%; /* Full width */
-    padding: 0.5rem;
+    padding: 1rem; /* Consistent padding */
     margin-bottom: 1rem; /* Spacing below the input */
-    border: 1px solid #ccc; /* Subtle border */
-    border-radius: 4px; /* Slightly rounded corners */
+    border: 2px solid #007bff; /* Consistent border */
+    border-radius: 8px; /* Consistent rounded corners */
+    font-size: 1.25rem; /* Larger font size */
+    font-family: 'Roboto', sans-serif; /* Ensuring the font family is consistent */
 }
 
+
+
 /* Style the output textarea */
-#alternatingTextOutput, #alternatingTextOutput1 {
+textarea {
     width: 100%; /* Full width */
-    padding: 0.5rem;
-    height: 3em; /* Fixed height for the textarea */
-    border: 1px solid #ccc; /* Subtle border */
-    border-radius: 4px; /* Slightly rounded corners */
-    margin-bottom: 1rem; /* Spacing below the textarea */
-    background-color: #f8f8f8; /* Slightly off-white background */
+    padding: 1rem; /* Match input padding */
+    border: 2px solid #007bff; /* Match input border */
+    border-radius: 8px; /* Match input border-radius */
+    font-size: 1.25rem; /* Match input font size */
+    font-family: 'Roboto', sans-serif; /* Ensuring the font family is consistent */
     resize: none; /* Disable resizing */
 }
 
