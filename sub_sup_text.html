@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Pangram World" />
+    <meta property="og:description"
+        content="Check if you have a pangram, add symbols or adjust your text to bold, italic, or even alternating caps/lower case for Facebook and other social media platforms. Additionally, enrich your science and math emails with a variety of mathematical symbols and Greek letters." />
+    <meta property="og:image" content="https://www.pangram-world.com/images/pangram-logo-192.png" />
+    <meta property="og:url" content="https://www.pangram-world.com" />
+    <title>Sub and Superscript Text Generator</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="style/bootstrap.css">
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/cards.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/bootstrap.bundle.js"></script>
+    <script src="https://kit.fontawesome.com/18fe617275.js" crossorigin="anonymous"></script>
+
+    <!-- Add any additional meta tags and scripts here -->
+</head>
+<body>
+    <!-- Main content area where your page content will go -->
+    <header id="globalHeader"></header>
+    <main>
+        <h2>Sub and superscript Text Generator</h2>
+        <p>Suitable to copy and paste into <i class="fab fa-facebook facebook-icon" font-size: 1em; vertical-align:
+                middle; margin-left: 0.5em;"></i></p><small>Note: There are some limitations to available letters and symbols in super and subscript form.</small>
+        <form id="alternatingTextForm">
+            <input type="text" id="textInput" placeholder="Enter your text here" required>
+            <button type="submit" class="transform-btn">Transform</button>
+        </form>
+        <!-- Output textbox -->
+        <h3>Superscript</h3>
+        <textarea id="alternatingTextOutput" placeholder="Your superscript text will appear here" readonly></textarea>
+        <!-- Copy button -->
+        <button id="copyButton" type="button" class="copy-btn">Copy Superscript</button>
+        <h3>Subscript</h3>
+        <textarea id="alternatingTextOutput1" placeholder="Your subscript text will appear here" readonly></textarea>
+        <!-- New Copy button for subscript -->
+        <button id="copyBoldButton" type="button" class="copy-btn">Copy Subscript</button>
+    </main>
+
+    <footer id="globalFooter"></footer>
+    <script src="scripts/toUnicodeVariant.js"></script>
+    <script src="scripts/sub_sup_scripts.js"></script>
+</body>
+</html>
