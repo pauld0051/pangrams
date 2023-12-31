@@ -29,6 +29,52 @@
         <h2>Roman Numeral Generator</h2>
         <p>Suitable to copy and paste into <i class="fab fa-facebook facebook-icon" font-size: 1em; vertical-align:
                 middle; margin-left: 0.5em;"></i></p>
+                <!-- Help Button to trigger modal -->
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#romanNumeralHelpModal">
+                    <i class="far fa-question-circle red"></i>
+                </button>
+                <!-- The Modal -->
+                <div class="modal fade" id="romanNumeralHelpModal" tabindex="-1" aria-labelledby="romanNumeralHelpModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="romanNumeralHelpModalLabel">Roman Numeral Guide</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Roman numerals are based on seven symbols:</p>
+                                <ul>
+                                    <li><strong>I</strong> - 1</li>
+                                    <li><strong>V</strong> - 5</li>
+                                    <li><strong>X</strong> - 10</li>
+                                    <li><strong>L</strong> - 50</li>
+                                    <li><strong>C</strong> - 100</li>
+                                    <li><strong>D</strong> - 500</li>
+                                    <li><strong>M</strong> - 1000</li>
+                                </ul>
+                                <p>Numbers are formed by combining symbols and adding their values. For example:</p>
+                                <ul>
+                                    <li><strong>VIII</strong> - 8</li>
+                                    <li><strong>XII</strong> - 12</li>
+                                    <li><strong>XX</strong> - 20</li>
+                                    <li><strong>XXXIII</strong> - 33</li>
+                                    <li><strong>XLV</strong> - 45</li>
+                                    <li><strong>L</strong> - 50</li>
+                                    <li><strong>XC</strong> - 90</li>
+                                    <li><strong>C</strong> - 100</li>
+                                    <li><strong>D</strong> - 500</li>
+                                    <li><strong>CM</strong> - 900</li>
+                                    <li><strong>MMXXIII</strong> - 2023</li>
+                                </ul>
+                                <p>Note: The same symbol cannot be used more than three times in a row.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         <form id="alternatingTextForm">
             <input type="number" id="textInput" placeholder="Enter your number here" required>
             <button type="submit" class="transform-btn">Transform</button>
