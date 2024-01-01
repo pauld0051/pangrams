@@ -245,3 +245,11 @@ textarea {
 #scrollToTopButton:hover {
   background-color: #555; /* Add a darker background on hover */
 }
+
+.info-text {
+    font-size: 1em;
+    vertical-align: middle;
+    margin-left: 0.5em;
+    color: #333;
+}
+
