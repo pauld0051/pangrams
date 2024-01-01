@@ -64,8 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   input.addEventListener('input', function () {
-    outputSuperscript.textContent = '';
-    outputSubscript.textContent = '';
     copyButton.textContent = 'Copy Text';
     copySubscriptButton.textContent = 'Copy Subscript Text';
   });

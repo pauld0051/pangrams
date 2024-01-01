@@ -36,11 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error('Error copying text: ', err);
     });
   });
-
-  input.addEventListener('input', function () {
-    outputElement.textContent = ''; // Clear original output when input changes
-    outputBoldElement.textContent = ''; // Clear bold output when input changes
+input.addEventListener('input', function () {
+    // Removed the lines that clear the text areas
     copyButton.textContent = 'Copy Text';
     copyBoldButton.textContent = 'Copy Bold Text';
-  });
+});
+
 });
