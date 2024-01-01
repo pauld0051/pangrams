@@ -12,15 +12,34 @@ function loadHeaderAndFooter() {
         .then(data => {
             document.getElementById('globalFooter').innerHTML = data;
             // Update the year in the footer
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            const currentYearElement = document.getElementById('currentYear');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
         });
 }
 
-// Execute loadHeaderAndFooter once the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', loadHeaderAndFooter);
+// Attaching a reset event to each form and clearing child textareas
+function attachFormResetEvents() {
+    // Get all forms on the page
+    var forms = document.querySelectorAll('form');
+    
+    // Iterate over each form and attach the reset event
+    forms.forEach(function (form) {
+        form.addEventListener('reset', function() {
+            // Get all textareas within the current form
+            var textareas = form.querySelectorAll('textarea');
 
-document.getElementById('alternatingTextForm').addEventListener('reset', function() {
-    document.getElementById('alternatingTextOutput').value = '';
-    document.getElementById('alternatingTextOutput1').value = '';
+            // Clear each textarea
+            textareas.forEach(function (textarea) {
+                textarea.value = '';
+            });
+        });
+    });
+}
+
+// Execute loadHeaderAndFooter and attachFormResetEvents once the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    loadHeaderAndFooter();
+    attachFormResetEvents();
 });
-
