@@ -63,4 +63,45 @@
             </ul>
         </div>
     </div>
+    <!-- Help Dropdown on the right-hand side -->
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarHelpDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="far fa-question-circle text-info"></i> Help
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarHelpDropdown">
+            <!-- Trigger modal -->
+            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">About</a>
+            </ul>
+        </li>
+    </ul>
 </nav>
+
+<!-- About Modal -->
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="aboutModalLabel">About Pangram-World</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Your about content here -->
+                <p>The page is set up to make your social media formatting easier. Because many social media platforms
+                    don't allow you to use italics, bold, super and subscripts, we can make it easy for you to do.
+                    Simply write your text and convert it on one of our text converters or use our symbols page to just
+                    click on the symbol you want to insert and it instantly copies.</p>
+                <ul>
+                    <li>Convert your text to different formats like Alternate, Bold, Italics, etc.</li>
+                    <li>Use a wide range of mathematical and chemistry symbols.</li>
+                    <li>Change Roman numerals into standard numbers and vice versa.</li>
+                </ul>
+                <p>Explore a world of text transformation and symbol insertion, all in one place!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
