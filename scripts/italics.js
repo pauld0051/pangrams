@@ -1,35 +1,45 @@
 document.addEventListener('DOMContentLoaded', function () {
+  const input = document.getElementById('textInput');
+  const outputElement = document.getElementById('alternatingTextOutput');
+  const outputBoldElement = document.getElementById('alternatingTextOutput1');
+  const copyButton = document.getElementById('copyButton');
+  const copyBoldButton = document.getElementById('copyButton1');
+
   document.getElementById('alternatingTextForm').addEventListener('submit', function (e) {
     e.preventDefault();
-
-    let inputText = document.getElementById('textInput').value;
-
-    // Convert input text to its italic equivalent using toUnicodeVariant
-    let italicText = toUnicodeVariant(inputText, 'italic sans');
-
-    // Set the italic text as the value of the output element
-    const outputElement = document.getElementById('alternatingTextOutput');
-    outputElement.textContent = italicText; // Use textContent to set text
-    outputElement.style.height = ""; // Reset the height
-    outputElement.style.height = outputElement.scrollHeight + "px"; // Adjust the height to fit content
+    // Use the bold variant for transformation
+    outputElement.textContent = toUnicodeVariant(input.value, 'italic sans');
+    // Use the bold Bold variant for transformation
+    outputBoldElement.textContent = toUnicodeVariant(input.value, 'bis');
+    outputElement.style.height = outputElement.scrollHeight + 'px'; // Adjust the height to fit content
+    outputBoldElement.style.height = outputBoldElement.scrollHeight + 'px'; // Adjust the height to fit content
   });
 
-  // Copy to clipboard functionality
-  document.getElementById('copyButton').addEventListener('click', function () {
-    const textToCopy = document.getElementById('alternatingTextOutput').textContent;
-    navigator.clipboard.writeText(textToCopy).then(() => {
-      // Success feedback
-      this.textContent = 'Copied!';
+  copyButton.addEventListener('click', function () {
+    navigator.clipboard.writeText(outputElement.textContent).then(() => {
+      copyButton.textContent = 'Copied!';
       setTimeout(() => {
-        this.textContent = 'Copy Text';
+        copyButton.textContent = 'Copy Text';
       }, 5000);
     }).catch(err => {
-      console.error('Failed to copy text: ', err);
+      console.error('Error copying text: ', err);
     });
   });
 
-  // Event listener to revert the copy button text when the input is changed
-  document.getElementById('textInput').addEventListener('input', function () {
-    document.getElementById('copyButton').textContent = 'Copy Text';
+  copyBoldButton.addEventListener('click', function () {
+    navigator.clipboard.writeText(outputBoldElement.textContent).then(() => {
+      copyBoldButton.textContent = 'Copied!';
+      setTimeout(() => {
+        copyBoldButton.textContent = 'Copy Bold Text';
+      }, 5000);
+    }).catch(err => {
+      console.error('Error copying text: ', err);
+    });
   });
+input.addEventListener('input', function () {
+    // Removed the lines that clear the text areas
+    copyButton.textContent = 'Copy Text';
+    copyBoldButton.textContent = 'Copy Bold Text';
+});
+
 });
