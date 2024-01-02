@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let inputText = document.getElementById('textInput').value;
 
     // Convert input text to its italic equivalent using toUnicodeVariant
-    let italicText = toUnicodeVariant(inputText, 'italic');
+    let italicText = toUnicodeVariant(inputText, 'italic sans');
 
     // Set the italic text as the value of the output element
     const outputElement = document.getElementById('alternatingTextOutput');

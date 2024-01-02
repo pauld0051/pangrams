@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('alternatingTextForm').addEventListener('submit', function (e) {
     e.preventDefault();
     // Apply both bold and italic to the output
-    outputElement.textContent = toUnicodeVariant(input.value, 'bi');
+    outputElement.textContent = toUnicodeVariant(input.value, 'bis');
     outputElement.style.height = outputElement.scrollHeight + 'px';
   });
 

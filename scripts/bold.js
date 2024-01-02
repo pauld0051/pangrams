@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById('alternatingTextForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    outputElement.textContent = toUnicodeVariant(input.value, 'bold'); // Replace your loop with toUnicodeVariant call
+    outputElement.textContent = toUnicodeVariant(input.value, 'bold sans'); // Replace your loop with toUnicodeVariant call
     outputElement.style.height = outputElement.scrollHeight + 'px'; // Adjust the height to fit content
   });
 
