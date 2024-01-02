@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Bubble Text Generator | Pangram World" />
+    <meta property="og:description"
+        content="Bring fun and creativity to your texts with our Bubble Text Generator! Easily convert standard text into bubble or negative bubble style, perfect for unique social media posts, artistic designs, or just to add a playful touch to your messages." />
+    <meta property="og:image" content="https://www.pangram-world.com/images/pangram-world-title.png" />
+    <meta property="og:url" content="https://www.pangram-world.com/bubble_text.html" />
+    <title>Negative Bubble Text Generator | Pangram World</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="style/bootstrap.css">
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/cards.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- ... favicon ... -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512x512.png">
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/bootstrap.bundle.js"></script>
+    <script src="https://kit.fontawesome.com/18fe617275.js" crossorigin="anonymous"></script>
+
+    <!-- Add any additional meta tags and scripts here -->
+</head>
+<body>
+    <!-- Main content area where your page content will go -->
+    <header id="globalHeader"></header>
+    <main>
+        <h2>Negative Bubble Text Generator</h2>
+        <p class="info-text">Suitable to copy and paste into <i class="fab fa-facebook facebook-icon"></i></p>
+        <form id="alternatingTextForm">
+            <input type="text" id="textInput" placeholder="Enter your text here" required>
+            <button type="submit" class="transform-btn">Transform</button>
+            <!-- Output textbox -->
+            <textarea id="alternatingTextOutput1" placeholder="Your negative bubble text will appear here" readonly></textarea>
+            <!-- Copy button -->
+            <button id="copyButton1" type="button" class="copy-btn">Copy Bubble Text</button>
+            <h3>Bubble Text</h3>
+            <!-- New Output textbox for Squared Negative -->
+            <textarea id="alternatingTextOutput" placeholder="Your bubble text will appear here"
+                readonly></textarea>
+            <!-- New Copy button for Squared Negative -->
+            <button id="copyButton" type="button" class="copy-btn">Copy Negative Bubble Text</button>
+            <!-- Clear button using Bootstrap styles -->
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <!-- Other buttons -->
+                <button class="btn btn-danger" type="reset">Clear</button>
+            </div>
+        </form>
+        <!-- Scroll to Top button (hidden by default with inline style.css) -->
+        <button onclick="scrollToTop()" id="scrollToTopButton"
+            style="display: none; position: fixed; bottom: 20px; right: 20px;"><i class="fas fa-arrow-up"></i></button>
+    </main>
+
+    <footer id="globalFooter"></footer>
+    <script src="scripts/toUnicodeVariant.js"></script>
+    <script src="scripts/bubble.js"></script>
+</body>
+</html>
