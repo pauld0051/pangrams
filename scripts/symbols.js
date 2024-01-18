@@ -84,13 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Event listener for the slider
-    const sizeRange = document.getElementById('sizeRange');
-    sizeRange.addEventListener('input', updateImageSizes);
-
-    // Initialize image sizes and label
-    updateImageSizes();
 });
 
 async function copyImageToClipboard(dataUrl) {
