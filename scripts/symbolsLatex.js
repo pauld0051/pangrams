@@ -133,3 +133,21 @@ function setSize(selectedSize) {
     size = selectedSize;
     renderEquation();
 }
+
+async function copyImageToClipboard(dataUrl) {
+    if (!window.ClipboardItem) {
+        console.error('ClipboardItem is not supported in this browser.');
+        // Implement fallback method or notify user here
+        return;
+    }
+
+    try {
+        const response = await fetch(dataUrl);
+        const blob = await response.blob();
+        const item = new ClipboardItem({ [blob.type]: blob });
+        await navigator.clipboard.write([item]);
+        // Optionally, show a "copied" message or overlay
+    } catch (err) {
+        console.error('Error copying image: ', err);
+    }
+}
