@@ -134,20 +134,52 @@ function setSize(selectedSize) {
     renderEquation();
 }
 
+// Fallback method for copying images to clipboard
+function copyImageFallback(dataUrl) {
+    // Create an off-screen image element
+    const img = document.createElement('img');
+    img.src = dataUrl;
+    document.body.appendChild(img);
+
+    // Create a range and selection to select the image
+    const range = document.createRange();
+    range.selectNode(img);
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    try {
+        // Attempt to execute the copy command
+        const successful = document.execCommand('copy');
+        const msg = successful ? 'successful' : 'unsuccessful';
+        console.log('Fallback: Copying image command was ' + msg);
+    } catch (err) {
+        console.error('Fallback: Oops, unable to copy', err);
+    }
+
+    // Clean up
+    selection.removeAllRanges();
+    document.body.removeChild(img);
+}
+
+// Function to copy image to clipboard
 async function copyImageToClipboard(dataUrl) {
     if (!window.ClipboardItem) {
-        console.error('ClipboardItem is not supported in this browser.');
-        // Implement fallback method or notify user here
+        // Use fallback for browsers without ClipboardItem support
+        copyImageFallback(dataUrl);
         return;
     }
 
+    // ClipboardItem is supported
     try {
         const response = await fetch(dataUrl);
         const blob = await response.blob();
         const item = new ClipboardItem({ [blob.type]: blob });
         await navigator.clipboard.write([item]);
-        // Optionally, show a "copied" message or overlay
+        console.log('Image copied to clipboard.');
     } catch (err) {
         console.error('Error copying image: ', err);
+        // If the Clipboard API fails, use the fallback
+        copyImageFallback(dataUrl);
     }
 }
