@@ -46,8 +46,8 @@ function adjustSizeForMathJax() {
         case 'small': mathContainer.style.fontSize = '0.7em'; break;
         case 'normal': mathContainer.style.fontSize = '1em'; break;
         case 'large': mathContainer.style.fontSize = '1.4em'; break;
-        case 'veryLarge': mathContainer.style.fontSize = '1.8em'; break;
-        case 'huge': mathContainer.style.fontSize = '2.2em'; break;
+        case 'veryLarge': mathContainer.style.fontSize = '2.0em'; break;
+        case 'huge': mathContainer.style.fontSize = '2.8em'; break;
     }
 }
 
