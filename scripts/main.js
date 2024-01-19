@@ -67,55 +67,50 @@ function scrollToTop() {
   });
 }
 
-// Submenu in headers
+// This script is simplified to rely on Bootstrap's built-in dropdown features
 document.addEventListener("DOMContentLoaded", function() {
-  // Function to adjust the submenu if it goes off the right side of the screen
-  function adjustSubmenu() {
-    document.querySelectorAll('.dropdown-menu .submenu').forEach(function(submenu) {
-      // Reset style to default right position
-      submenu.style.right = '100%';
-      submenu.style.left = 'auto';
-
-      // Get the bounding rectangle of the submenu
-      var rect = submenu.getBoundingClientRect();
-
-      // If the submenu goes off the right edge of the screen, position it to the left
-      if (rect.right > window.innerWidth) {
-        submenu.style.right = 'auto';
-        submenu.style.left = '100%';
-      }
-    });
-  }
-
-  // Adjust submenu on hover
-  document.querySelectorAll('.dropdown-menu > li').forEach(function(dropdown) {
-    dropdown.addEventListener('mouseenter', adjustSubmenu);
-  });
-
-  // If it's a small screen, setup the accordion dropdown functionality
+  // Only add the additional functionality for small screens
   if (window.innerWidth < 992) {
-    // close all inner dropdowns when parent is closed
-    document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
-      everydropdown.addEventListener('hidden.bs.dropdown', function () {
-        this.querySelectorAll('.submenu').forEach(function(everysubmenu){
-          everysubmenu.style.display = 'none';
-        });
+    // Toggle submenu visibility on click
+    document.querySelectorAll('.dropdown-menu a.dropdown-toggle').forEach(function(element){
+      element.addEventListener('click', function (e) {
+          let nextEl = this.nextElementSibling;
+          if(nextEl && nextEl.classList.contains('dropdown-menu')) {  
+            // Toggle the display of the submenu
+            nextEl.classList.toggle('show');
+            // Prevent the default action of the anchor
+            e.preventDefault();
+            // Stop the event from propagating to higher-level elements
+            e.stopPropagation();
+          }
       });
     });
 
-    document.querySelectorAll('.dropdown-menu a').forEach(function(element){
-      element.addEventListener('click', function (e) {
-          let nextEl = this.nextElementSibling;
-          if(nextEl && nextEl.classList.contains('submenu')) {  
-            // prevent opening link if link needs to open dropdown
-            e.preventDefault();
-            if(nextEl.style.display == 'block'){
-              nextEl.style.display = 'none';
-            } else {
-              nextEl.style.display = 'block';
-            }
-          }
+    // Ensure that submenu hides when a submenu item is clicked
+    document.querySelectorAll('.submenu .dropdown-item').forEach(function(element){
+      element.addEventListener('click', function () {
+        let submenu = this.closest('.dropdown-menu');
+        if (submenu) {
+          submenu.classList.remove('show');
+        }
       });
     });
   }
 });
+
+document.addEventListener('click', function(e) {
+    // Check if the clicked element is a submenu trigger
+    if (e.target.matches('.dropdown-menu a')) {
+        var submenu = e.target.nextElementSibling;
+
+        // Check if the next element is a submenu
+        if (submenu && submenu.classList.contains('submenu')) {
+            e.preventDefault();
+            e.stopPropagation(); // Stop the click from being propagated.
+
+            // Toggle the submenu display on click
+            submenu.style.display = (submenu.style.display === 'block' ? 'none' : 'block');
+        }
+    }
+});
+

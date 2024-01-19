@@ -41,7 +41,7 @@ body, main {
   }
   .nav-item .submenu-left { 
     left: auto;
-    right: 105%;
+    right: 100%;
   }
   .dropdown-menu > li:hover > .submenu { display: block; }
   /* Rest of your CSS... */
@@ -55,4 +55,11 @@ body, main {
     right: 100%;
   }
 }
+
+@media (max-width: 991px) {
+  .navbar .dropdown-menu .submenu {
+    position: static; /* Instead of absolute */
+  }
+}
+
 
