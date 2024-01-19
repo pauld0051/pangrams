@@ -66,3 +66,56 @@ function scrollToTop() {
     behavior: 'smooth'
   });
 }
+
+// Submenu in headers
+document.addEventListener("DOMContentLoaded", function() {
+  // Function to adjust the submenu if it goes off the right side of the screen
+  function adjustSubmenu() {
+    document.querySelectorAll('.dropdown-menu .submenu').forEach(function(submenu) {
+      // Reset style to default right position
+      submenu.style.right = '100%';
+      submenu.style.left = 'auto';
+
+      // Get the bounding rectangle of the submenu
+      var rect = submenu.getBoundingClientRect();
+
+      // If the submenu goes off the right edge of the screen, position it to the left
+      if (rect.right > window.innerWidth) {
+        submenu.style.right = 'auto';
+        submenu.style.left = '100%';
+      }
+    });
+  }
+
+  // Adjust submenu on hover
+  document.querySelectorAll('.dropdown-menu > li').forEach(function(dropdown) {
+    dropdown.addEventListener('mouseenter', adjustSubmenu);
+  });
+
+  // If it's a small screen, setup the accordion dropdown functionality
+  if (window.innerWidth < 992) {
+    // close all inner dropdowns when parent is closed
+    document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+      everydropdown.addEventListener('hidden.bs.dropdown', function () {
+        this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+          everysubmenu.style.display = 'none';
+        });
+      });
+    });
+
+    document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+      element.addEventListener('click', function (e) {
+          let nextEl = this.nextElementSibling;
+          if(nextEl && nextEl.classList.contains('submenu')) {  
+            // prevent opening link if link needs to open dropdown
+            e.preventDefault();
+            if(nextEl.style.display == 'block'){
+              nextEl.style.display = 'none';
+            } else {
+              nextEl.style.display = 'block';
+            }
+          }
+      });
+    });
+  }
+});

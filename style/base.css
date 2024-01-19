@@ -29,3 +29,30 @@ body, main {
     width: 50%;
     height: auto;
 }
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+  .dropdown-menu li { position: relative; }
+  .nav-item .submenu { 
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 65%;
+  }
+  .nav-item .submenu-left { 
+    left: auto;
+    right: 105%;
+  }
+  .dropdown-menu > li:hover > .submenu { display: block; }
+  /* Rest of your CSS... */
+}
+/* ============ desktop view .end// ============ */
+
+/* Additional styles for right-aligned submenus */
+@media all and (min-width: 992px) {
+  .dropdown-menu li:hover > .submenu[sub-menu-right] {
+    left: auto;
+    right: 100%;
+  }
+}
+
