@@ -45,6 +45,10 @@ body, main {
     display: block;
 }
 
+.sub-item {
+  left: 8px;
+}
+
 /* Adjust the width of the logo container */
 #logo-container {
     max-width: fit-content; /* This will make the div only as wide as its content */
