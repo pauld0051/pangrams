@@ -1,0 +1,34 @@
+<section>
+    <h3>Make your own LaTeX</h3>
+    <div class="equation-grid">
+        <input type="text" id="latexInput" class="form-control mb-2" placeholder="Enter LaTeX here">
+        <!-- Use a row to contain the selects and button -->
+        <div class="row g-2 mb-2">
+            <!-- Bootstrap Select for Background Selection -->
+            <div class="col-sm">
+                <select class="form-select form-select-sm" aria-label="Select Background" id="backgroundSelect">
+                    <option value="transparent" selected>Transparent</option>
+                    <option value="white">White</option>
+                </select>
+            </div>
+            <!-- Bootstrap Select for Size Selection -->
+            <div class="col-sm">
+                <select class="form-select form-select-sm" aria-label="Select Size" id="sizeSelect">
+                    <option value="small">Small</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="large">Large</option>
+                    <option value="veryLarge">Very Large</option>
+                    <option value="huge">Huge</option>
+                </select>
+            </div>
+            <div class="col-sm-auto">
+                <button class="btn btn-primary" id="renderButton">Render PNG</button>
+            </div>
+        </div>
+        <div id="mathContainer"></div>
+        <!-- Container where the copy button will be placed -->
+        <div id="latexCopyContainer" class="mt-2 mb-2"></div>
+        <img id="resultImage" style="display:none; max-width:100%; height:auto;">
+        <a id="downloadLink" href="#" style="display:none;"></a>
+    </div>
+</section>

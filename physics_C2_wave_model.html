@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Physics Wave Model Equations for IB Curriculum | Pangram World" />
     <meta property="og:description"
-        content="Find a curated list of essential Physics Greenhouse Effect Equations tailored for the IB curriculum at Pangram World. Effortlessly access and copy equations in LaTeX, or basic form, ideal for students and educators in the field of physics." />
+        content="Find a curated list of essential Physics Wave Model Equations tailored for the IB curriculum at Pangram World. Effortlessly access and copy equations in LaTeX, or basic form, ideal for students and educators in the field of physics." />
     <meta property="og:image" content="https://www.pangram-world.com/images/pangram-world-title.png" />
     <meta property="og:url" content="https://www.pangram-world.com/physics_C2_wave_model.html" />
     <title>Physics Wave Model Equations | Pangram World</title>
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="style/cards.css">
-    <link rel="stylesheet" href="style/symbols.css">
+    <link rel="stylesheet" href="style/symbols_physics.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- ... favicon ... -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -38,84 +38,91 @@
 <body>
     <!-- Main content area where your page content will go -->
     <header id="globalHeader"></header>
-    <main>
-        <h2>Copy Wave Model Equations</h2>
-        <p class="info-text">
-            Click the LaTeX buttons to copy LaTeX code for use in your projects or paste into the LaTeX PNG generator
-            below. For
-            instant use in documents or on social media, or you can copy the basic formatted equations.
-        </p>
-        <small>
-            <em>Note: The LaTeX PNG generator may not display images correctly in Firefox. For the best experience,
-                please use
-                Chrome or Edge browsers.</em>
-            <br>
-            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#instructionModal">
-                <i class="far fa-question-circle red"></i>
-            </button>
-            <p><em><small>Note: Some limitations exist in the basic form, as subscripts are not always
-                        available.</small></em></p>
-            <!-- LaTeX Form -->
-            <section>
-                <h3>C.2 Wave Model Equations - LaTeX</h3>
-                <div class="symbol-container">
-                    <button class="symbol-btn" data-symbol="v = f \lambda = \frac{\lambda}{T}">
-                        \( v = f \lambda = \frac{\lambda}{T} \)
-                    </button>
-                    <div class="copied-overlay">Copied!</div>
-                    <label><code>v = f \lambda = \frac{\lambda}{T}</code></label>
+<main>
+    <h2>Copy Wave Model Equations</h2>
+    <p class="info-text">
+        Click the LaTeX buttons to copy LaTeX code for use in your projects or paste into the LaTeX PNG generator
+        below. For
+        instant use in documents or on social media, or you can copy the basic formatted equations.
+    </p>
+    <small>
+        <em>Note: The LaTeX PNG generator may not display images correctly in Firefox. For the best experience,
+            please use
+            Chrome or Edge browsers.</em>
+    </small>
+    <br>
+    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#instructionModal">
+        <i class="far fa-question-circle red"></i> Instructions
+    </button>
+    <p><em><small>Note: Some limitations exist in the basic form, as subscripts are not always
+                available.</small></em></p>
+
+    <!-- LaTeX Form -->
+    <section>
+        <h3>C.2 Wave Model Equations - LaTeX</h3>
+        <div class="equation-grid">
+            <div class="equation-container">
+                <div class="equation">
+                    \( v = f \lambda = \frac{\lambda}{T} \)
                 </div>
-            </section>
-            
-            <!-- Basic Form -->
-            <section>
-                <h3>C.2 Wave Model Equations - Basic</h3>
-                <div class="symbol-container">
-                    <button class="symbol-btn" data-symbol="v = fλ = λ/T">
-                        v = fλ = λ/T
-                    </button>
-                    <div class="copied-overlay">Copied!</div>
-                    <label>Wave Velocity</label>
+                <button class="symbol-btn equation-btn" data-symbol="v = f \lambda = \frac{\lambda}{T}">
+                    Copy LaTeX
+                </button>
+                <div class="copied-overlay">Copied!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Basic Form -->
+    <section>
+        <h3>C.2 Wave Model Equations - Basic</h3>
+        <div class="equation-grid">
+            <div class="equation-container">
+                <div class="equation">
+                    v = fλ = λ/T
                 </div>
-            </section>
-
-            <section>
-                <h3>Make your own LaTeX</h3>
-                <input type="text" id="latexInput" class="form-control mb-2" placeholder="Enter LaTeX here">
-
-                <!-- Use a row to contain the selects and button -->
-                <div class="row g-2 mb-2"> <!-- 'g-2' adds some gap between the columns -->
-                    <!-- Bootstrap Select for Background Selection -->
-                    <div class="col-sm"> <!-- 'col-sm' will stack on small screens and be horizontal on larger ones -->
-                        <select class="form-select form-select-sm" aria-label="Select Background" id="backgroundSelect">
-                            <option value="transparent" selected>Transparent</option>
-                            <option value="white">White</option>
-                        </select>
-                    </div>
-
-                    <!-- Bootstrap Select for Size Selection -->
-                    <div class="col-sm">
-                        <select class="form-select form-select-sm" aria-label="Select Size" id="sizeSelect">
-                            <option value="small">Small</option>
-                            <option value="normal" selected>Normal</option>
-                            <option value="large">Large</option>
-                            <option value="veryLarge">Very Large</option>
-                            <option value="huge">Huge</option>
-                        </select>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-auto"> <!-- This column will auto-size to the content width -->
-                            <button class="btn btn-primary" id="renderButton">Render PNG</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="mathContainer"></div>
-                <!-- Container where the copy button will be placed -->
-                <div id="latexCopyContainer" class="mt-2 mb-2"></div>
-                <img id="resultImage" style="display:none; max-width:100%; height:auto;">
-                <a id="downloadLink" href="#" style="display:none;"></a> <!-- Download link will be here -->
-            </section>
+                <button class="symbol-btn equation-btn" data-symbol="v = fλ = λ/T">
+                    Copy Text
+                </button>
+                <div class="copied-overlay">Copied!</div>
+            </div>
+        </div>
+    </section>
+    
+<section>
+    <h3>Make your own LaTeX</h3>
+    <div class="equation-grid">
+        <input type="text" id="latexInput" class="form-control mb-2" placeholder="Enter LaTeX here">
+        <!-- Use a row to contain the selects and button -->
+        <div class="row g-2 mb-2">
+            <!-- Bootstrap Select for Background Selection -->
+            <div class="col-sm">
+                <select class="form-select form-select-sm" aria-label="Select Background" id="backgroundSelect">
+                    <option value="transparent" selected>Transparent</option>
+                    <option value="white">White</option>
+                </select>
+            </div>
+            <!-- Bootstrap Select for Size Selection -->
+            <div class="col-sm">
+                <select class="form-select form-select-sm" aria-label="Select Size" id="sizeSelect">
+                    <option value="small">Small</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="large">Large</option>
+                    <option value="veryLarge">Very Large</option>
+                    <option value="huge">Huge</option>
+                </select>
+            </div>
+            <div class="col-sm-auto">
+                <button class="btn btn-primary" id="renderButton">Render PNG</button>
+            </div>
+        </div>
+        <div id="mathContainer"></div>
+        <!-- Container where the copy button will be placed -->
+        <div id="latexCopyContainer" class="mt-2 mb-2"></div>
+        <img id="resultImage" style="display:none; max-width:100%; height:auto;">
+        <a id="downloadLink" href="#" style="display:none;"></a>
+    </div>
+</section>
 
             <!-- Scroll to Top button (hidden by default with inline style.css) -->
             <button onclick="scrollToTop()" id="scrollToTopButton"
