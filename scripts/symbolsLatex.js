@@ -35,6 +35,8 @@ function renderEquation() {
     MathJax.typesetPromise().then(() => {
         mathContainer.style.visibility = 'hidden'; // Hide container to prevent flickering
         convertToImage(); // Convert the MathJax output to an image
+        // Scroll to the mathContainer after rendering the LaTeX
+        mathContainer.scrollIntoView({ behavior: 'smooth' });
     }).catch(err => console.error('Error in typesetting:', err));
 }
 
@@ -92,6 +94,8 @@ function convertToImage() {
         resultImage.src = canvas.toDataURL('image/png');
         resultImage.style.display = 'block'; // Show the image
         resultImage.style.margin = 'auto'; // Center the image if needed
+        // Scroll to the resultImage after it has been displayed
+        resultImage.scrollIntoView({ behavior: 'smooth' });
 
         // Create the download link
         createDownloadLink(canvas.toDataURL('image/png'));
@@ -193,18 +197,6 @@ async function copyImageToClipboard(dataUrl) {
         // If the Clipboard API fails, use the fallback
         copyImageFallback(dataUrl);
     }
-}
-
-// This function is added to show the copied overlay correctly
-function showCopiedOverlay(button) {
-    // Find the .copied-overlay within the same .symbol-container as the button
-    let overlay = button.closest('.symbol-container').querySelector('.copied-overlay');
-    
-    // Show the overlay
-    overlay.style.display = 'block';
-
-    // Hide the overlay after 2 seconds
-    setTimeout(() => overlay.style.display = 'none', 2000);
 }
 
 document.querySelectorAll('.equation-btn').forEach(button => {
