@@ -106,35 +106,40 @@ function convertToImage() {
 }
 
 function createDownloadLink(imageUrl) {
-    const downloadLink = document.getElementById('downloadLink');
-    downloadLink.href = imageUrl;
-    downloadLink.download = 'equation.png';
-    downloadLink.style.display = 'block'; // Show the download link
-    downloadLink.textContent = 'Download Image'; // Text for the download link
-    downloadLink.style.textAlign = 'center'; // Center the download link
+    const downloadButton = document.getElementById('downloadLink'); // Assuming this is a button in your HTML
+    downloadButton.style.display = 'block'; // Show the download button
+    downloadButton.textContent = 'Download Image'; // Text for the download button
+    downloadButton.onclick = function() {
+        const link = document.createElement('a');
+        link.href = imageUrl;
+        link.download = 'equation.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
 }
 
 function createCopyButton(imageUrl) {
     // Get the container for the copy button
     const latexCopyContainer = document.getElementById('latexCopyContainer');
-    
-    // Check if a copy link already exists and remove it
-    const existingCopyLink = latexCopyContainer.querySelector('.copy-png-link');
-    if (existingCopyLink) {
-        latexCopyContainer.removeChild(existingCopyLink);
+
+    // Check if a copy button already exists and remove it
+    const existingCopyButton = latexCopyContainer.querySelector('.copy-png-button');
+    if (existingCopyButton) {
+        latexCopyContainer.removeChild(existingCopyButton);
     }
 
-    // Create the new copy text link
-    const copyTextLink = document.createElement('a');
-    copyTextLink.className = 'copy-png-link';
-    copyTextLink.innerText = 'Copy PNG';
-    copyTextLink.onclick = (event) => {
-        event.preventDefault(); // Prevent the default anchor action
+    // Create the new copy button
+    const copyButton = document.createElement('button');
+    copyButton.className = 'copy-png-button btn symbol-btn'; // Add classes for styling
+    copyButton.innerText = 'Copy PNG';
+    copyButton.onclick = function(event) {
+        event.preventDefault(); // Prevent the default button action
         copyImageToClipboard(imageUrl);
     };
 
-    // Append the new copy link
-    latexCopyContainer.appendChild(copyTextLink);
+    // Append the new copy button
+    latexCopyContainer.appendChild(copyButton);
 }
 
 function setBackground(selectedBackground) {
