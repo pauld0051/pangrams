@@ -123,14 +123,16 @@ textarea {
 }
 
 .book-coming-soon-container {
-    text-align: center; /* Center the logo */
-    margin: 2px 0; /* Add some space above and below the logo */
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
-
 .coming-soon-logo {
-    max-width: 40%; /* Ensure the image is responsive and fits its container */
-    height: auto; /* Maintain the aspect ratio */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    max-width: 300px;
+    height: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
 }
 
 /* Hover effect to scale up the logo slightly and increase the shadow */
