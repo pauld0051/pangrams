@@ -124,15 +124,29 @@ textarea {
 
 .book-coming-soon-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
+
 .coming-soon-logo {
     max-width: 300px;
     height: auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coming-soon-logo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(255, 100, 100, 0.4);
+}
+
+.book-caption {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: #6c757d; /* Bootstrap muted gray */
 }
 
 /* Hover effect to scale up the logo slightly and increase the shadow */
